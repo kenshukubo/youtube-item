@@ -1,16 +1,34 @@
 <template>
   <div>
-    <p>{{ message }}</p>
+    <h2>新着アイテム</h2>
+    <div>
+      <div v-for="(post, index) in posts" :key="index" >
+        <h3>{{post.title}}</h3>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'packs/axios'
+
 export default {
   data: function () {
     return {
-      message: "Hello Vue!"
+      posts: [],
     }
-  }
+  },
+  created () {
+      var self = this;
+      let url = `api/v1/posts.json`;
+      axios.get(url)
+      .then(function(res) {
+        self.posts = res.data.posts;
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    },
 }
 </script>
 
