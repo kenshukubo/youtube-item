@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_28_162502) do
+ActiveRecord::Schema.define(version: 2020_10_05_004900) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,12 +20,28 @@ ActiveRecord::Schema.define(version: 2020_09_28_162502) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "post_id"
+    t.string "name"
+    t.string "image"
+    t.integer "category"
+    t.integer "price"
+    t.string "amazon_url"
+    t.string "rakuten_url"
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_items_on_post_id"
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
     t.string "thumbnail"
     t.integer "category"
+    t.bigint "youtuber_id"
+    t.index ["youtuber_id"], name: "index_posts_on_youtuber_id"
   end
 
   create_table "youtubers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -37,4 +53,6 @@ ActiveRecord::Schema.define(version: 2020_09_28_162502) do
     t.string "image"
   end
 
+  add_foreign_key "items", "posts"
+  add_foreign_key "posts", "youtubers"
 end
