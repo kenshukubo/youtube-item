@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :posts
+  belongs_to :post
 
   validates :name, presence: true
   validates :price, presence: true
