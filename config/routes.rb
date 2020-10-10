@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root "static_pages#home"
 
   resources :posts, only: [:new, :create, :destroy]
+  resources :items, only: [:new, :create, :destroy]
 
   namespace :api do
     namespace :v1 do

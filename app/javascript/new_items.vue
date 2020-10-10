@@ -7,6 +7,7 @@
         <img :src="post.thumbnail_url">
         <div v-for="(item, index) in post.items" :key="index">
           <h4>{{item.name}}</h4>
+          <img :src="item.image.thumb_mini.url">
           <p>{{item.price}}円</p>
         </div>
       </div>
