@@ -1,0 +1,14 @@
+<div id="post-new">
+  <div class="container">
+
+    <%= form_with model: @post, url: posts_path, local: true, method: :post do |f| %>
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title %>
+      <%= f.label :thumbnail, "サムネイル" %>
+      <%= f.file_field :thumbnail %>
+      <%= f.label :youtuber_id, "Youtuber" %>
+      <%= f.text_field :youtuber_id %>
+      <%= f.submit "投稿" %>
+    <% end %>
+  </div>
+</div>

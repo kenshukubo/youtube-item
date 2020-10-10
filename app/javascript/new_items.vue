@@ -4,6 +4,7 @@
     <div>
       <div v-for="(post, index) in posts" :key="index" >
         <h3>{{post.title}}</h3>
+        <img :src="post.thumbnail_url">
         <div v-for="(item, index) in post.items" :key="index">
           <h4>{{item.name}}</h4>
           <p>{{item.price}}円</p>
