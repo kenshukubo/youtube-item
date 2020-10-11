@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_004900) do
+ActiveRecord::Schema.define(version: 2020_10_11_150057) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_004900) do
     t.string "thumbnail"
     t.integer "category"
     t.bigint "youtuber_id"
+    t.string "youtube_link"
     t.index ["youtuber_id"], name: "index_posts_on_youtuber_id"
   end
 
