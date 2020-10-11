@@ -72,7 +72,6 @@ export default {
   display: flex;
   border-radius: 3px;
   margin-bottom: 5px;
-  background-color: #f7f7f7;
 }
 .post-detail{
   padding: 15px;
