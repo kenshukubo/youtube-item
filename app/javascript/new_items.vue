@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 .post-content{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .post-info{
   display: flex;
