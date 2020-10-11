@@ -1,0 +1,25 @@
+#widget-side{
+  .header-sidebar{
+    border-bottom: 1px solid #e7e7e7;
+    color: #313131;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .category-item{
+    display: flex;
+    padding: 12px 0;
+    cursor: pointer;
+    &:hover{
+      .category-name{
+        text-decoration: underline;
+      }
+    }
+    .category-name{
+      color: #333;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+  }
+}

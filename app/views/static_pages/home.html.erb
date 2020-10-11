@@ -1,10 +1,14 @@
 <div id="top">
-  <div class="container">
-
-    <div id="new_items">
-      <div class="wrapper" style="padding-top: 20px;">
-        <Newitems/>
+  <div class="container column">
+    <div class="column-main">
+      <div id="new_items">
+        <div>
+          <Newitems/>
+        </div>
       </div>
+    </div>
+    <div class="column-side">
+      <%= render "shared/widget" %>
     </div>
 
     <%= javascript_pack_tag 'new_items' %>
