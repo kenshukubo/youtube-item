@@ -5,5 +5,6 @@ class Post < ApplicationRecord
   mount_uploader :thumbnail, ThumbnailUploader
 
   validates :title, presence: true
+  #validates :thumbnail, presence: true
   validates :youtuber_id, presence: true
 end
