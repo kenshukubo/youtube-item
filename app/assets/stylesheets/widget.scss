@@ -7,19 +7,22 @@
     padding-bottom: 10px;
     margin-bottom: 10px;
   }
-  .category-item{
-    display: flex;
-    padding: 12px 0;
-    cursor: pointer;
-    &:hover{
+  .category-list{
+    margin-bottom: 20px;
+    .category-item{
+      display: flex;
+      padding: 12px 0;
+      cursor: pointer;
+      &:hover{
+        .category-name{
+          text-decoration: underline;
+        }
+      }
       .category-name{
-        text-decoration: underline;
+        color: #333;
+        font-size: 13px;
+        margin-bottom: 2px;
       }
     }
-    .category-name{
-      color: #333;
-      font-size: 13px;
-      margin-bottom: 2px;
-    }
-  }
+  } 
 }
