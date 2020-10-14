@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   root "static_pages#home"
 
   resources :posts, only: [:new, :create, :destroy]
-  resources :youtubers, only: [:index, :new, :create, :destroy]
+  resources :youtubers, only: [:index, :new, :create, :show, :destroy]
   resources :items, only: [:new, :create, :destroy]
 
   namespace :api do
     namespace :v1 do
       resources :posts, only: [:index]
+      resources :youtubers, only: [:show]
     end
   end
 end
