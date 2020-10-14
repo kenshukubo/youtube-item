@@ -19,18 +19,13 @@
   <h2 class="header-sidebar">人気Youtuber</h2>
   <div class="category-list">
     <ul>
-      <li>
-        <a class="category-item">
-          <p class="category-name">ローラ</p>
-          <span></span>
-        </a>
-      </li>
-      <li>
-        <a class="category-item">
-          <p class="category-name">川口春奈</p>
-          <span></span>
-        </a>
-      </li>
-    </ul>
+      <%= @youtubers.all.find_each do |youtuber| %>
+        <li>
+          <%= link_to youtuber_path(youtuber.id), class:"category-item" do %>
+            <p class="category-name"><%= youtuber.name %></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul> 
   </div>
 </div>
