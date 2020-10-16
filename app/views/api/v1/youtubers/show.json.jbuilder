@@ -6,3 +6,8 @@ json.posts do
     json.items_num Item.where(post_id: post.id).count
   end
 end
+
+json.youtuber do
+  json.name @youtuber.name
+  json.image @youtuber.image.url
+end

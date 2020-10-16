@@ -1,5 +1,6 @@
 <template>
   <div>
+    <img :src="youtuber.image">
     <div v-for="(post, index) in posts" :key="index" class="post-content">
       <h3>{{post.title}}</h3>
       <div class="post-info">
@@ -33,6 +34,7 @@ export default {
   data: function () {
     return {
       posts: [],
+      youtuber: "",
       isActive: "",
     }
   },
@@ -43,6 +45,7 @@ export default {
     axios.get(url)
     .then(function(res) {
       self.posts = res.data.posts;
+      self.youtuber = res.data.youtuber;
     })
     .catch(function(error) {
       console.log(error);
