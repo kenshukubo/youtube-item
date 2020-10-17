@@ -73,6 +73,7 @@ export default {
 .youtuber-info{
   display: flex;
   align-items: center;
+  margin-bottom: 60px;
 }
 .channel-img{
   border-radius: 100%;
