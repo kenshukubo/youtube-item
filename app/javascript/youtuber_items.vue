@@ -1,6 +1,12 @@
 <template>
   <div>
-    <img :src="youtuber.image">
+    <div class="youtuber-info">
+      <img :src="youtuber.image" class="channel-img">
+      <div>
+        <h2><span class="youtuber-name">{{youtuber.name}}</span> のおすすめアイテム</h2>
+        <a :href="`https://www.youtube.com/channel/${youtuber.channelId}`" target="_blank" class="channel-link">Youtubeチャンネルへ</a>
+      </div>
+    </div>
     <div v-for="(post, index) in posts" :key="index" class="post-content">
       <h3>{{post.title}}</h3>
       <div class="post-info">
@@ -64,6 +70,25 @@ export default {
 </script>
 
 <style scoped>
+.youtuber-info{
+  display: flex;
+  align-items: center;
+}
+.channel-img{
+  border-radius: 100%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+.youtuber-name{
+  font-size: 32px;
+}
+.channel-link{
+  color: #929292;
+  cursor: pointer;
+}
+.channel-link:hover{
+  text-decoration: underline;
+}
 .post-content{
   margin-bottom: 30px;
 }

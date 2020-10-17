@@ -10,4 +10,5 @@ end
 json.youtuber do
   json.name @youtuber.name
   json.image @youtuber.image.url
+  json.channelId @youtuber.channel_id
 end
