@@ -25,6 +25,7 @@ gem 'dotenv-rails'
 
 gem 'google-api-client', '~> 0.11'
 gem 'rakuten_web_service'
+gem 'paapi'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
