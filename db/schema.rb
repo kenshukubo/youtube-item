@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_17_054943) do
+ActiveRecord::Schema.define(version: 2020_10_22_151836) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,11 +26,12 @@ ActiveRecord::Schema.define(version: 2020_10_17_054943) do
     t.string "image"
     t.integer "category"
     t.integer "price"
-    t.string "amazon_url"
-    t.string "rakuten_url"
-    t.string "url"
+    t.text "amazon_url"
+    t.text "rakuten_url"
+    t.text "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "asin"
     t.index ["post_id"], name: "index_items_on_post_id"
   end
 
