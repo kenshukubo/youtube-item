@@ -5,9 +5,9 @@ youtube = Google::Apis::YoutubeV3::YouTubeService.new
 youtube.key = ENV["YOUTUBE_APIKEY"]
 
 ids = [
-  ["UC8pMBOI9vXf6fIM670vdIPw", 1],
-  ["UCkMs-Zr9pGixbqm0mhO8J7g", 2],
-  ["UCFdBehO71GQaIom4WfVeGSw", 3]
+  ['UC8pMBOI9vXf6fIM670vdIPw', 1],
+  ['UCkMs-Zr9pGixbqm0mhO8J7g', 2],
+  ['UCOjmYCnYlTcdoD2DKHvrV5g', 3]
 ]
 
 ids.each do |id|

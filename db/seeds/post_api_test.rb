@@ -5,9 +5,9 @@ youtube = Google::Apis::YoutubeV3::YouTubeService.new
 youtube.key = ENV["YOUTUBE_APIKEY"]
 
 ids = [
-  ["V6mDS9u1ucA", 1],
-  ["FEApSBT34mo", 2],
-  ["Kcb_1TyQN_w", 3]
+  ['UeBXdnHjhXE', 1, 42],
+  ['47YnnAAh3o0', 2, 42],
+  ['uLSE9dJcBVI', 3, 42]
 ]
 
 ids.each do |id|
@@ -31,6 +31,6 @@ ids.each do |id|
     title: title, 
     thumbnail: open("#{Rails.root}/db/images/video_image/#{id[1]}.png"),
     video_id: "#{id[0]}",
-    youtuber_id: 41
+    youtuber_id: id[2]
   )
 end
