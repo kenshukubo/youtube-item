@@ -152,6 +152,10 @@ export default {
   margin-bottom: 5px;
   font-size: 20px;
   line-height: 1.2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .item-price{
   color: #fd381e;
