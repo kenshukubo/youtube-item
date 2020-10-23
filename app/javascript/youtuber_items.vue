@@ -12,7 +12,7 @@
         <img :src="post.thumbnail_url" class="post-img">
         <div class="post-detail">
           <h3 class="post-title">{{post.title}}</h3>
-          <a :href="`https://www.youtube.com/channel/${youtuber.channelId}`" target="_blank" class="channel-link">Youtubeリンク</a>
+          <a :href="`https://www.youtube.com/watch?v=${post.video_id}`" target="_blank" class="channel-link">Youtubeリンク</a>
         </div>
       </div>
       <div v-if="isActive !== index" @click="active(index)" class="item-list-btn">アイテム一覧を表示<span class="item-num">(商品数：{{post.items_num}})</span></div>
