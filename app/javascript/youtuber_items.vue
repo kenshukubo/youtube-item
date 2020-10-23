@@ -146,7 +146,8 @@ export default {
   align-items: center;
 }
 .item-img{
-  width: 200px;
+  max-width: 160px;
+  max-height: 160px;
 }
 .item-name{
   margin-bottom: 5px;
