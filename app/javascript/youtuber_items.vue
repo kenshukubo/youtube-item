@@ -23,7 +23,7 @@
             <img :src="item.image.thumb_mini.url" class="item-img">
             <h3 class="item-name">{{item.name}}</h3>
             <p class="item-price">{{item.price}}円<span class="tax-include">(税込)</span></p>
-            <ul>
+            <ul class="item-btn-wrapper">
               <li><a :href="item.rakuten_url" class="item-link" target="_blank">楽天で詳細をみる</a></li>
               <li><a :href="item.amazon_url" class="item-link" target="_blank">Amazonで詳細をみる</a></li>
             </ul>
@@ -143,6 +143,7 @@ export default {
 .item-info{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .item-img{
   width: 200px;
@@ -162,6 +163,9 @@ export default {
 }
 .tax-include{
   font-size: 12px !important;
+}
+.item-btn-wrapper{
+  width: 100%;
 }
 li{
   margin-top: 10px;
