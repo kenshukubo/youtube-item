@@ -8,14 +8,14 @@
       </div>
     </div>
     <div v-for="(post, index) in posts" :key="index" class="post-content">
-      <h3>{{post.title}}</h3>
       <div class="post-info">
-        <img :src="post.thumbnail_url">
+        <img :src="post.thumbnail_url" class="post-img">
         <div class="post-detail">
-          <p>紹介商品数：{{post.items_num}}</p>
+          <h3 class="post-title">{{post.title}}</h3>
+          <a :href="`https://www.youtube.com/channel/${youtuber.channelId}`" target="_blank" class="channel-link">Youtubeリンク</a>
         </div>
       </div>
-      <div v-if="isActive !== index" @click="active(index)" class="item-list-btn">アイテム一覧を表示</div>
+      <div v-if="isActive !== index" @click="active(index)" class="item-list-btn">アイテム一覧を表示<span class="item-num">(商品数：{{post.items_num}})</span></div>
 
       <div :class="{'is-active' : isActive === index}" class="item-list-switch">
         <div v-for="(item, index) in post.items" :key="index" class="item-content">
@@ -98,18 +98,31 @@ export default {
   border-radius: 3px;
   margin-bottom: 5px;
 }
+.post-img{
+  width: 150px;
+}
 .post-detail{
-  padding: 15px;
+  padding-left: 15px;
+}
+.post-title{
+  font-size: 20px;
+}
+.item-num{
+  color: #929292;
+  font-size: 10px;
 }
 .item-list-btn{
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+  padding: 5px 0;
   color: #787c7b;
   border: 1px solid #e7e7e7;
   border-radius: 3px;
   min-height: 36px;
   cursor: pointer;
+  font-weight: 600;
 }
 .item-list-btn:hover{
   opacity: .8;
