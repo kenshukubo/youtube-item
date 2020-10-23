@@ -19,8 +19,8 @@
 
       <div :class="{'is-active' : isActive === index}" class="item-list-switch">
         <div v-for="(item, index) in post.items" :key="index" class="item-content">
-          <img :src="item.image.thumb_mini.url">
           <div class="item-info">
+            <img :src="item.image.thumb_mini.url" class="item-img">
             <h3 class="item-name">{{item.name}}</h3>
             <p class="item-price">{{item.price}}円<span class="tax-include">(税込)</span></p>
             <ul>
@@ -91,12 +91,12 @@ export default {
   text-decoration: underline;
 }
 .post-content{
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .post-info{
   display: flex;
   border-radius: 3px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .post-img{
   width: 150px;
@@ -108,7 +108,6 @@ export default {
   font-size: 20px;
 }
 .item-num{
-  color: #929292;
   font-size: 10px;
 }
 .item-list-btn{
@@ -117,12 +116,13 @@ export default {
   flex-direction: column;
   justify-content: center;
   padding: 5px 0;
-  color: #787c7b;
+  color: #fff;
   border: 1px solid #e7e7e7;
-  border-radius: 3px;
   min-height: 36px;
   cursor: pointer;
   font-weight: 600;
+  background-color: #02bb80;
+  border-radius: 9999px;
 }
 .item-list-btn:hover{
   opacity: .8;
@@ -135,6 +135,7 @@ export default {
   border: 1px solid #e7e7e7;
   border-radius: 3px;
   padding: 30px;
+  width: 40%;
 }
 .is-active{
   display: block;
@@ -142,6 +143,9 @@ export default {
 .item-info{
   display: flex;
   flex-direction: column;
+}
+.item-img{
+  width: 200px;
 }
 .item-name{
   margin-bottom: 5px;
