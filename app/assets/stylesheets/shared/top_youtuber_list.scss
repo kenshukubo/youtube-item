@@ -6,7 +6,7 @@
   grid-gap: 10px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   .youtuber-info{
     display: flex;
     flex-direction: column;
@@ -41,5 +41,18 @@
     display: -webkit-box;
     -webkit-line-clamp: 1;
     overflow: hidden;
+  }
+}
+.youtuber-index-btn{
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 0;
+  text-align: center;
+  display: block;
+  color: #333;
+  &:hover{
+    opacity: .8;
+    text-decoration: underline;
   }
 }
