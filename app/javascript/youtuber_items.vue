@@ -135,10 +135,12 @@ export default {
   border: 1px solid #e7e7e7;
   border-radius: 3px;
   padding: 30px;
-  width: 40%;
+  width: 100%;
+  box-sizing: border-box;
 }
 .is-active{
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 }
 .item-info{
   display: flex;
