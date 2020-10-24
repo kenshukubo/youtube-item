@@ -1,0 +1,13 @@
+<h2 class="youtuber-list-title">Youtuberのおすすめ</h2>
+<ul class="youtuber-wrapper">
+  <% @youtubers.find_each do |youtuber| %>
+    <%= link_to youtuber_path(youtuber.id) do %>
+      <li class="youtuber-info">
+        <%= image_tag youtuber.image.url, class:"channel-img"%>
+        <div>
+          <span class="youtuber-name"><%= youtuber.name %></span>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
