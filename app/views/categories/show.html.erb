@@ -2,13 +2,37 @@
   <div class="container">
     <h2 class="category-title"><%= @category.name %></h2>
     <ul class="category-wrapper">
-    <% @categories.find_each do |category| %>
-      <%= link_to category_path(category.id) do %>
-        <li class="category">
-          <p class="category-child-title"><%=category.name%></p>
-        </li>
+      <%= @categories.find_each do |category| %>
+        <%= link_to category_path(category.id) do %>
+          <li class="category">
+            <p class="category-child-title"><%=category.name%></p>
+          </li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+    <div class="column-main">
+      <h2 class="category-title">Youtuberのおすすめアイテム</h2>
+      <ul class="item-wrapper">
+        <%= @items.each do |item| %>
+          <li class="item">
+            <%= image_tag item.image.url, class:"item-img" %>
+            <div>
+              
+              <%=link_to youtuber_path(item.post.youtuber_id), class:"youtuber-info" do %>
+                <%=image_tag Youtuber.find(item.post.youtuber_id).image.url, class:"channel-icon" %>
+                <p class="channel-name"><%=Youtuber.find(item.post.youtuber_id).name%></p>
+              <% end %>
+
+              <% if item.amazon_url %>
+                <%=link_to item.name, item.amazon_url, class:"item-name", target: :_blank %>
+              <% else %>
+                <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank %>
+              <% end %>
+              <span class="item-price"><%= item.price %>円(税込)</span>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

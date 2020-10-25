@@ -8,6 +8,7 @@
     padding: 16px 0;
     overflow: auto;
     white-space: nowrap;
+    margin-bottom: 60px;
     .category{
       display: inline-block;
       background: #fff;
@@ -24,6 +25,54 @@
       color: #999;
       font-size: 12px;
       padding: 4px 12px;
+    }
+  }
+  .item-wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    .item{
+      display: flex;
+      margin-bottom: 20px;
+      .item-img{
+        width: 100px;
+        height: 100px;
+      }
+      .youtuber-info{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        cursor: pointer;
+        &:hover{
+          .channel-icon{
+            opacity: .8;
+          }
+          .channel-name{
+            text-decoration: underline;
+          }
+        }
+        .channel-icon{
+          width: 28px;
+          border-radius: 100%;
+          object-fit: cover;
+          margin-right: 5px;
+        }
+      }
+      .item-name{
+        font-weight: 600;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      .item-price{
+        color: #999;
+        font-size: 12px;
+      }
     }
   }
 }
