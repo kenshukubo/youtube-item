@@ -1,58 +1,60 @@
-.youtuber-list-title{
-  margin-bottom: 20px;
-}
-.youtuber-wrapper{
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto;
-  margin-bottom: 10px;
-  .youtuber-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #f0f0f0;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 15px 5px 15px;
-    &:hover{
-      border: 1px solid #c7c7c7;
-      .channel-img{
-        opacity: .8;
-      }
-      .youtuber-name{
-        text-decoration: underline;
-      }
-    }
-  }
-  .channel-img{
-    width: 70px;
-    border-radius: 100%;
-    object-fit: cover;
+#top-youtuber-list{
+  .youtuber-list-title{
     margin-bottom: 10px;
   }
-  .youtuber-name{
-    font-size: 13px;
-    color: #222;
-    font-weight: bold;
-    height: 30px;
-    width: 100%;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
+  .youtuber-wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    margin-bottom: 10px;
+    .youtuber-info{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #f0f0f0;
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 15px 5px 15px;
+      &:hover{
+        border: 1px solid #c7c7c7;
+        .channel-img{
+          opacity: .8;
+        }
+        .youtuber-name{
+          text-decoration: underline;
+        }
+      }
+    }
+    .channel-img{
+      width: 70px;
+      border-radius: 100%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .youtuber-name{
+      font-size: 13px;
+      color: #222;
+      font-weight: bold;
+      height: 30px;
+      width: 100%;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+    }
   }
-}
-.youtuber-index-btn{
-  background-color: #f7f7f7;
-  border-radius: 5px;
-  font-size: 16px;
-  padding: 10px 0;
-  text-align: center;
-  display: block;
-  color: #333;
-  &:hover{
-    opacity: .8;
-    text-decoration: underline;
+  .youtuber-index-btn{
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 0;
+    text-align: center;
+    display: block;
+    color: #333;
+    &:hover{
+      opacity: .8;
+      text-decoration: underline;
+    }
   }
 }
