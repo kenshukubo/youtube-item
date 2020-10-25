@@ -1,7 +1,7 @@
 <header>
-  <div class="header-icon">
-    <%= link_to "サービス", root_path %>
-  </div>
+  <%= link_to root_path, class:"header-icon" do %>
+    <%= image_tag "site-logo.png" %>
+  <% end %>
   <%= link_to "コンテンツ追加", new_post_path %>
   <%= link_to "アイテム追加", new_item_path %>
   <%= link_to "Youtuber一覧", youtubers_path %>
