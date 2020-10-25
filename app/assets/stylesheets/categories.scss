@@ -1,3 +1,29 @@
-// Place all the styles related to the categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#category-item{
+  .category-title{
+    margin-bottom: 10px;
+  }
+  .category-wrapper{
+    display: flex;
+    background: #F5F5F5;
+    padding: 16px 0;
+    overflow: auto;
+    white-space: nowrap;
+    .category{
+      display: inline-block;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,0.08);
+      &:hover{
+        opacity: .8;
+      }
+    }
+    .category:not(:first-child){
+      margin-left: 8px;
+    }
+    .category-child-title{
+      color: #999;
+      font-size: 12px;
+      padding: 4px 12px;
+    }
+  }
+}

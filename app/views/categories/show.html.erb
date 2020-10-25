@@ -1,0 +1,14 @@
+<div id="category-item">
+  <div class="container">
+    <h2 class="category-title"><%= @category.name %></h2>
+    <ul class="category-wrapper">
+    <% @categories.find_each do |category| %>
+      <%= link_to category_path(category.id) do %>
+        <li class="category">
+          <p class="category-child-title"><%=category.name%></p>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  </div>
+</div>
