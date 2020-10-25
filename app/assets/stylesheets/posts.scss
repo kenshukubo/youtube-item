@@ -1,3 +1,54 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#posts-list{
+  .new-post-title{
+    margin-bottom: 10px;
+  }
+  .posts-wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    margin-bottom: 15px;
+    .post-info{
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      &:hover{
+        .post-img{
+          opacity: .8;
+        }
+        .youtuber-name, .post-title{
+          text-decoration: underline;
+        }
+      }
+      .post-title{
+        font-size: 13px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .post-img{
+        height: 120px;
+        object-fit: cover;
+        width: 100%;
+        margin-bottom: 10px; 
+      }
+      .youtuber-info{
+        display: flex;
+        .youtuber-img{
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          margin-right: 5px;
+        }
+        .youtuber-name{
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

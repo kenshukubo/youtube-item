@@ -1,0 +1,19 @@
+<div id="posts-list">
+  <div class="container">
+    <h2 class="new-post-title">新着アイテム一覧</h2>
+    <ul class="posts-wrapper">
+    <% @posts.find_each do |post| %>
+      <%= link_to youtuber_path(post.youtuber_id) do %>
+        <li class="post-info">
+          <%= image_tag post.thumbnail.url, class:"post-img"%>
+          <h3 class="post-title"><%=post.title%></h3>
+          <div class="youtuber-info">
+            <%=image_tag Youtuber.find(post.youtuber_id).image.url, class:"youtuber-img" %>
+            <span class="youtuber-name"><%= Youtuber.find(post.youtuber_id).name %></span>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  </div>
+</div>

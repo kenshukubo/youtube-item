@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "static_pages#home"
 
-  resources :posts, only: [:new, :create, :destroy]
+  resources :posts, only: [:index, :new, :create, :destroy]
   resources :youtubers, only: [:index, :new, :create, :show, :destroy]
   resources :items, only: [:new, :create, :destroy]
 
