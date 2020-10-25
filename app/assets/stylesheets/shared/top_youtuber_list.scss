@@ -45,15 +45,16 @@
     }
   }
   .youtuber-index-btn{
-    background-color: #f7f7f7;
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 10px 0;
-    text-align: center;
+    width: 60%;
     display: block;
-    color: #333;
+    border: 1px solid #02bb80;
+    border-radius: 8px;
+    color: #02bb80;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 auto;
     &:hover{
-      opacity: .8;
       text-decoration: underline;
     }
   }
