@@ -1,6 +1,9 @@
 #top-youtuber-list{
   .youtuber-list-title{
     margin-bottom: 10px;
+    letter-spacing: 0.8px;
+    border-left: 3px solid #02bb80;
+    padding-left: 16px;
   }
   .youtuber-wrapper{
     display: grid;
@@ -51,7 +54,9 @@
     border-radius: 8px;
     color: #02bb80;
     font-size: 16px;
+    font-weight: 500;
     text-align: center;
+    letter-spacing: 0.4px;
     padding: 10px 0;
     margin: 0 auto;
     &:hover{
