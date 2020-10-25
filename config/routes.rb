@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :new, :create, :destroy]
   resources :youtubers, only: [:index, :new, :create, :show, :destroy]
   resources :items, only: [:new, :create, :destroy]
+  resources :categories, only: [:show]
 
   namespace :api do
     namespace :v1 do
