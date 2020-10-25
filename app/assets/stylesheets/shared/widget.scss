@@ -11,17 +11,24 @@
     margin-bottom: 20px;
     .category-item{
       display: flex;
+      align-items: center;
       padding: 12px 0;
       cursor: pointer;
       &:hover{
+        .category-img{
+          opacity: .8;
+        }
         .category-name{
           text-decoration: underline;
         }
       }
+      .category-img{
+        margin-right: 8px;
+        width: 32px;
+      }
       .category-name{
         color: #333;
         font-size: 13px;
-        margin-bottom: 2px;
       }
     }
   } 

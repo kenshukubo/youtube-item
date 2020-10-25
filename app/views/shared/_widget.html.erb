@@ -1,4 +1,17 @@
 <div id="widget-side">
+  <h2 class="header-sidebar">カテゴリー</h2>
+  <div class="category-list">
+    <ul>
+      <%= @categories.all.find_each do |category| %>
+        <li>
+          <%= link_to category_path(category.id), class:"category-item" do %>
+            <%=image_tag category.image.url, class:"category-img" %>
+            <p class="category-name"><%= category.name %></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul> 
+  </div>
   <h2 class="header-sidebar">人気動画ネタ</h2>
   <div class="category-list">
     <ul>
