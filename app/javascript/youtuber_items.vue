@@ -15,7 +15,13 @@
           <a :href="`https://www.youtube.com/watch?v=${post.video_id}`" target="_blank" class="channel-link">Youtubeリンク</a>
         </div>
       </div>
-      <div v-if="isActive !== index" @click="active(index)" class="item-list-btn">アイテム一覧を表示<span class="item-num">(商品数：{{post.items_num}})</span></div>
+      <div v-if="isActive !== index" @click="active(index)" class="item-list-btn">
+        <div>
+          <span>アイテム一覧を表示</span>
+          <img :src="arrowImage" class="arrow-img">
+        </div>
+        <span class="item-num">(商品数：{{post.items_num}})</span>
+      </div>
 
       <div :class="{'is-active' : isActive === index}" class="item-list-switch">
         <div v-for="(item, index) in post.items" :key="index" class="item-content">
@@ -36,12 +42,15 @@
 
 <script>
 import axios from 'packs/axios'
+import arrow_image from 'packs/components/youtuber_items/images/arrow.png'
+
 export default {
   data: function () {
     return {
       posts: [],
       youtuber: "",
       isActive: "",
+      arrowImage: arrow_image
     }
   },
   created () {
@@ -129,6 +138,9 @@ export default {
 }
 .item-list-switch{
   display: none;
+}
+.arrow-img{
+  width: 14px;
 }
 .item-content{
   display: flex;
