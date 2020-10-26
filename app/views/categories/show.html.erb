@@ -13,7 +13,7 @@
     <div class="column-main">
       <h2 class="category-title">Youtuberのおすすめアイテム</h2>
       <ul class="item-wrapper">
-        <%= @items.each do |item| %>
+        <%= @items.find_each do |item| %>
           <li class="item">
             <%= image_tag item.image.url, class:"item-img" %>
             <div>
