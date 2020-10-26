@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @youtubers = Youtuber.all.order(id: :desc)
+    @youtubers = Youtuber.all.order(id: :desc).limit(20)
     @posts = Post.all.order(id: :desc)
     @categories = Category.where(ancestry: nil)
   end
