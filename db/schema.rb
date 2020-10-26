@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_081403) do
+ActiveRecord::Schema.define(version: 2020_10_26_151342) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -68,10 +68,8 @@ ActiveRecord::Schema.define(version: 2020_10_25_081403) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.integer "sex"
     t.integer "category"
     t.text "image"
-    t.string "youtube_link"
     t.string "channel_id"
   end
 
