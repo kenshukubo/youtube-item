@@ -7,4 +7,5 @@ class Post < ApplicationRecord
   validates :title, presence: true
   #validates :thumbnail, presence: true
   validates :youtuber_id, presence: true
+  validates :video_id, presence: true
 end

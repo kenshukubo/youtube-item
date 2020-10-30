@@ -2,6 +2,7 @@ class Youtuber < ApplicationRecord
   has_many :posts, dependent: :destroy
 
   validates :name, presence: true
+  validates :channel_id, presence: true
 
   mount_uploader :image, ChannelImageUploader
 
