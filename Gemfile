@@ -14,6 +14,7 @@ gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
 gem 'dotenv-rails'
 gem 'ancestry'
 # Use Redis adapter to run Action Cable in production
