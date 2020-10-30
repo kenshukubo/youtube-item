@@ -8,6 +8,14 @@
             <%=image_tag category.image.url, class:"category-img" %>
             <p class="category-name"><%= category.name %></p>
           <% end %>
+
+          <%= Category.where(ancestry: category.id).find_each do |sub_category| %>
+            <% if ItemCategory.find_by(category: sub_category).present? %>
+              <%= link_to category_path(sub_category.id), class:"category-item sub_category" do %>
+                <p class="category-name"><%= sub_category.name %></p>
+              <% end %>
+            <% end %>
+          <% end %>
         </li>
       <% end %>
     </ul> 
@@ -18,13 +26,11 @@
       <li>
         <a class="category-item">
           <p class="category-name">モーニングルーティン</p>
-          <span></span>
         </a>
       </li>
       <li>
         <a class="category-item">
           <p class="category-name">ナイトルーティン</p>
-          <span></span>
         </a>
       </li>
     </ul>
