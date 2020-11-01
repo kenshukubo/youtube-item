@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: youtube_item_production
-  username: youtube_item
-  password: <%= ENV['YOUTUBE_ITEM_DATABASE_PASSWORD'] %>
+  database: postgresql
+  username: unicode
+  password: 5
