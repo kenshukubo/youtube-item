@@ -1,51 +1,77 @@
 <template>
   <div>
     <ul class="search-list">
-      <li class="search-item">
+      <li class="search-item" @click="onYoutuber" :class="{ active: searchYoutuber }">
         <span>Youtuber</span>
       </li>
-      <li class="search-item">
+      <li class="search-item" @click="onPost" :class="{ active: searchPost }">
         <span>動画</span>
       </li>
-      <li class="search-item">
+      <li class="search-item" @click="onItem" :class="{ active: searchItem }">
         <span>アイテム</span>
       </li>
     </ul>
 
-    <div>
+    <div v-if="searchYoutuber">
       <ul class="youtuber-wrapper">
         <a v-for="(youtuber, index) in youtubers" :key="index" :href="`/youtubers/${youtuber.id}`">
           <li class="youtuber-info">
-            <img :src="youtuber.image" class="channel-img">
+            <img :src="youtuber.image.url" class="channel-img">
             <span class="youtuber-name">{{youtuber.name}}</span>
           </li>
         </a>
       </ul>
     </div>
+
+    <div v-if="searchPost">
+
+    </div>
+
+    <div v-if="searchItem">
+
+    </div>
   </div>
 </template>
 
 <script>
-import axios from 'packs/axios'
 export default {
   data: function () {
     return {
-      youtubers: [],
+      youtubers: "",
+      posts: "",
+      items: "",
+      searchYoutuber: true,
+      searchPost: false,
+      searchItem: false
     }
   },
   created () {
     var self = this;
-    let url = `/api/v1/searches.json`;
-    axios.get(url)
-    .then(function(res) {
-      self.youtubers = res.data.youtubers;
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
+    const element = document.getElementById('searches');
+    const data = JSON.parse(element.getAttribute('data'));
+    self.youtubers = data.youtubers;
+    self.posts = data.posts;
+    self.items = data.items;
   },
-  methods: { 
-  
+  methods: {
+    onYoutuber: function(){
+      var self = this;
+      self.searchYoutuber = true;
+      self.searchPost = false;
+      self.searchItem = false;
+    },
+    onPost: function(){
+      var self = this;
+      self.searchYoutuber = false;
+      self.searchPost = true;
+      self.searchItem = false;
+    },
+    onItem: function(){
+      var self = this;
+      self.searchYoutuber = false;
+      self.searchPost = false;
+      self.searchItem = true;
+    }
   }
 }
 </script>
@@ -69,7 +95,10 @@ export default {
   border-bottom: 2px solid #02bb80;
   cursor: pointer;
 }
-
+.active{
+  color: #222 !important;
+  border-bottom: 2px solid #02bb80 !important;
+}
 .youtuber-wrapper{
   display: grid;
   grid-gap: 10px;

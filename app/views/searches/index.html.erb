@@ -5,8 +5,14 @@
         <h2 style="margin-bottom:30px;">
           「<%= @search %>」の検索結果
         </h2>
-
-        <div id="searches">
+        
+        <% props = {
+            youtubers: @youtubers,
+            posts: @posts,
+            items: @items
+          }.to_json
+        %>
+        <div id="searches" data="<%= props %>">
           <div>
             <Searches/>
           </div>
