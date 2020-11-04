@@ -35,7 +35,19 @@
     </div>
 
     <div v-if="searchItem">
-
+      <ul class="item-wrapper">
+        <li v-for="(item, index) in items" :key="index" class="item">
+          <img :src="item.image.url" class="item-img">
+          <div>
+            <a class="youtuber-info">
+            
+            </a>
+            <a v-if="item.amazon_url" :href="item.amazon_url" class="item-name" target="_blank">{{item.name}}</a>
+            <a v-else-if="item.rakuten_url" :href="item.rakuten_url" class="item-name" target="_blank">{{item.name}}</a>
+            <span class="item-price">{{item.price}}円(税込)</span>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -180,6 +192,54 @@ export default {
       object-fit: cover;
       width: 100%;
       margin-bottom: 10px; 
+    }
+  }
+}
+.item-wrapper{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  .item{
+    display: flex;
+    margin-bottom: 20px;
+    .item-img{
+      width: 100px;
+      height: 100px;
+    }
+    .youtuber-info{
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      cursor: pointer;
+      &:hover{
+        .channel-icon{
+          opacity: .8;
+        }
+        .channel-name{
+          text-decoration: underline;
+        }
+      }
+      .channel-icon{
+        width: 28px;
+        border-radius: 100%;
+        object-fit: cover;
+        margin-right: 5px;
+      }
+    }
+    .item-name{
+      font-weight: 600;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .item-price{
+      color: #999;
+      font-size: 12px;
     }
   }
 }
