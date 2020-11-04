@@ -12,4 +12,9 @@ class Item < ApplicationRecord
   #validates :amazon_url, presence: true
   validates :post_id, presence: true
   validates :asin, uniqueness: true
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where(['name LIKE ?', "%#{search}%"])
+  end
 end

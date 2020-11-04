@@ -1,0 +1,20 @@
+<div id="search-result">
+  <div class="container">
+    <div class="column-main">
+      <% if @search.present? %>
+        <h2 style="margin-bottom:30px;">
+          「<%= @search %>」の検索結果
+        </h2>
+
+        <div id="searches">
+          <div>
+            <Searches/>
+          </div>
+        </div>
+        <%= javascript_pack_tag 'searches' %>
+        <%= stylesheet_pack_tag 'searches' %>
+
+      <% end %>
+    </div>
+  </div>
+</div>

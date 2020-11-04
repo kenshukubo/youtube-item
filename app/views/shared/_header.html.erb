@@ -3,6 +3,11 @@
     <h2 class="site-logo">Tubest</h2>
   <% end %>
   <span class="header-desc">Youtuberのおすすめアイテムまとめ</span>
+
+  <%= form_tag(searches_path, method: :get) do %>
+    <%= text_field_tag :search, "", required: true %>
+    <%= submit_tag "Search" , :username => nil %>
+  <% end %>
   <!--
   <%= link_to "コンテンツ追加", new_post_path %>
   <%= link_to "アイテム追加", new_item_path %>

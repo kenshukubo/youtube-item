@@ -8,4 +8,9 @@ class Post < ApplicationRecord
   #validates :thumbnail, presence: true
   validates :youtuber_id, presence: true
   validates :video_id, presence: true
+
+  def self.search(search)
+    return Post.all unless search
+    Post.where(['title LIKE ?', "%#{search}%"])
+  end
 end
