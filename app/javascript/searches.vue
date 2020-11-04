@@ -1,13 +1,13 @@
 <template>
   <div>
     <ul class="search-list">
-      <li class="search-item" @click="onYoutuber" :class="{ active: searchYoutuber }">
+      <li class="search-item" @click="onYoutuber" :class="{active: searchYoutuber}">
         <span>Youtuber</span>
       </li>
-      <li class="search-item" @click="onPost" :class="{ active: searchPost }">
+      <li class="search-item" @click="onPost" :class="{active: searchPost}">
         <span>動画</span>
       </li>
-      <li class="search-item" @click="onItem" :class="{ active: searchItem }">
+      <li class="search-item" @click="onItem" :class="{active: searchItem}">
         <span>アイテム</span>
       </li>
     </ul>
@@ -24,7 +24,14 @@
     </div>
 
     <div v-if="searchPost">
-
+      <ul class="posts-wrapper">
+        <a v-for="(post, index) in posts" :key="index" :href="`/youtubers/${post.youtuber_id}`">
+          <li class="post-info">
+            <img :src="post.thumbnail.url" class="post-img">
+            <h3 class="post-title">{{post.title}}</h3>
+          </li>
+        </a>
+      </ul>
     </div>
 
     <div v-if="searchItem">
@@ -139,6 +146,41 @@ export default {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     text-align: center;
+  }
+}
+.posts-wrapper{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  margin-bottom: 15px;
+  .post-info{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    &:hover{
+      .post-img{
+        opacity: .8;
+      }
+      .post-title{
+        text-decoration: underline;
+      }
+    }
+    .post-title{
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .post-img{
+      height: 120px;
+      object-fit: cover;
+      width: 100%;
+      margin-bottom: 10px; 
+    }
   }
 }
 </style>
