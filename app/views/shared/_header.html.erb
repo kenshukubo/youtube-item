@@ -1,16 +1,15 @@
 <header>
-  <%= link_to root_path, class:"header-icon" do %>
-    <h2 class="site-logo">Tubest</h2>
-  <% end %>
-  <span class="header-desc">Youtuberのおすすめアイテムまとめ</span>
+  <div class="header-left">
+    <%= link_to root_path, class:"header-icon" do %>
+      <h2 class="site-logo">Tubest</h2>
+      <span class="header-desc">Youtuberのおすすめアイテムまとめ</span>
+    <% end %>
+  </div>
 
-  <%= form_tag(searches_path, method: :get) do %>
-    <%= text_field_tag :search, "", required: true %>
-    <%= submit_tag "Search" , :username => nil %>
-  <% end %>
-  <!--
-  <%= link_to "コンテンツ追加", new_post_path %>
-  <%= link_to "アイテム追加", new_item_path %>
-  <%= link_to "Youtuber一覧", youtubers_path %>
-  -->
+  <div class="serach-area">
+    <%= form_tag(searches_path, method: :get, class:"search-form") do %>
+      <%= text_field_tag :search, "", required: true, class:"text-field", placeholder:"チャンネル名・アイテム名・動画名", autocomplete: 'off' %>
+    <% end %>
+  </div>
+  
 </header>
