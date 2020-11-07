@@ -2,16 +2,16 @@
   <div class="container">
     <h2 class="youtuber-list-title">新着Youtuber一覧</h2>
     <ul class="youtuber-wrapper">
-    <% @youtubers.find_each do |youtuber| %>
-      <%= link_to youtuber_path(youtuber.id) do %>
-        <li class="youtuber-info">
-          <%= image_tag youtuber.image.url, class:"channel-img"%>
-          <div>
-            <span class="youtuber-name"><%= youtuber.name %></span>
-          </div>
-        </li>
+      <% @youtubers.find_each do |youtuber| %>
+        <%= link_to youtuber_path(youtuber.id) do %>
+          <li class="youtuber-info">
+            <%= image_tag youtuber.image.url, class:"channel-img"%>
+            <div>
+              <span class="youtuber-name"><%= youtuber.name %></span>
+            </div>
+          </li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
   </div>
 </div>
