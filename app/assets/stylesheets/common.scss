@@ -13,20 +13,20 @@ body{
   width: 100%;
   padding: 60px;
   box-sizing: border-box;
+  .column{
+    display: flex;
+  }
+  .column-main{
+    padding-right: 20px;
+    width: 70%;
+  }
+  .column-side{
+    width: 30%;
+  }
   .display-for-pc{
     display: flex;
     @media(max-width: 767px){
       display: none;
-    }
-    .column{
-      display: flex;
-    }
-    .column-main{
-      padding-right: 20px;
-      width: 70%;
-    }
-    .column-side{
-      width: 30%;
     }
   }
   .display-for-sp{
