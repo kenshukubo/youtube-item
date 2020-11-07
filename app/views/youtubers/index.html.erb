@@ -1,6 +1,6 @@
 <div id="youtubers-list">
   <div class="container">
-    <h2 class="youtuber-list-title">新着Youtuber一覧</h2>
+    <h2 class="youtuber-list-title">Youtuber一覧</h2>
     <ul class="youtuber-wrapper">
       <% @youtubers.find_each do |youtuber| %>
         <%= link_to youtuber_path(youtuber.id) do %>
