@@ -1,7 +1,24 @@
 <div id="top">
   <div class="container column">
-    <div class="column-main">
+    <div class="display-for-pc">
+      <div class="column-main">
 
+        <div class="content">
+          <%= render "shared/top_youtuber_list" %>
+        </div>
+
+        <div class="content">
+          <%= render "shared/new_post" %>
+        </div>
+
+      </div>
+
+      <div class="column-side">
+        <%= render "shared/widget" %>
+      </div>
+    </div>
+
+    <div class="display-for-sp">
       <div class="content">
         <%= render "shared/top_youtuber_list" %>
       </div>
@@ -9,12 +26,6 @@
       <div class="content">
         <%= render "shared/new_post" %>
       </div>
-
     </div>
-
-    <div class="column-side">
-      <%= render "shared/widget" %>
-    </div>
-
   </div>
 </div>
