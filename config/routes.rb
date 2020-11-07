@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "static_pages#home"
   get "/terms",  to: "static_pages#terms"
+  get "/privacy_policy",  to: "static_pages#privacy_policy"
 
   resources :posts, only: [:index, :new, :create, :destroy]
   resources :youtubers, only: [:index, :new, :create, :show, :destroy]
