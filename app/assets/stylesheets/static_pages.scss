@@ -6,13 +6,14 @@
 
 .static_page{
   color: #222;
+  margin-bottom: 60px;
   h1{
     text-align: center;
     margin: 50px 30px;
     font-size: 30px;
   }
   .main-contents{
-    border: 1px solid white;
+    border: 1px solid #222;
     padding: 40px;
     .content{
       margin-bottom: 50px;
