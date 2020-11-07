@@ -514,6 +514,7 @@ DEPENDENCIES
   fog
   google-api-client (~> 0.11)
   jbuilder (~> 2.7)
+  kaminari (~> 1.2.1)
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
   paapi
