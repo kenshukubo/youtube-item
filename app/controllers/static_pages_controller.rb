@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
     @posts = Post.all.order(id: :desc)
     @categories = Category.where(ancestry: nil)
   end
+
+  def terms
+  end
 end

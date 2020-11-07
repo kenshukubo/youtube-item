@@ -3,3 +3,32 @@
     margin-bottom: 60px;
   }
 }
+
+.static_page{
+  color: #222;
+  h1{
+    text-align: center;
+    margin: 50px 30px;
+    font-size: 30px;
+  }
+  .main-contents{
+    border: 1px solid white;
+    padding: 40px;
+    .content{
+      margin-bottom: 50px;
+      h2{
+        font-size: 20px;
+      }
+      p{
+        font-size: 14px;
+      }
+      a{
+        font-size: 14px;
+        color: #ccc;
+      }
+    }
+    .content:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
