@@ -6,3 +6,19 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
+  enums:
+    youtuber:
+      category:
+        streamer: "Youtuber"
+        talent: "タレント"
+        fashion_model: "モデル"
+        entertainer: "芸人"
+        idol: "アイドル"
+        other: "その他"
+    post:
+      category:
+        morning_routin: "モーニングルーティン"
+        night_routin: "ナイトルーティン"
+        your_bag: "バッグの中身"
+        your_pouch: "ポーチの中身"
+        home_time: "おうち時間"
