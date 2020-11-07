@@ -11,5 +11,11 @@
       <%= text_field_tag :search, "", required: true, class:"text-field", placeholder:"チャンネル名・アイテム名・動画名", autocomplete: 'off' %>
     <% end %>
   </div>
+
+  <div class="menu-area" id="header_menu">
+    <Headermenu/>
+  </div>
+  <%= javascript_pack_tag 'header_menu' %>
+  <%= stylesheet_pack_tag 'header_menu' %>
   
 </header>

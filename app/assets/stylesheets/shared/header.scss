@@ -26,6 +26,9 @@ header{
   }
   .serach-area{
     width: 320px;
+    @media(max-width: 767px){
+      display: none;
+    }
     .search-form{
       display: flex;
       align-items: center;
@@ -44,6 +47,13 @@ header{
         background: image-url("search.png") 12px no-repeat;
 
       }
+    }
+  }
+  .menu-area{
+    display: none;
+    @media(max-width: 767px){
+      display: block;
+      cursor: pointer;
     }
   }
 }
