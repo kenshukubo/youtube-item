@@ -39,3 +39,50 @@ li {
   list-style-position: outside;
   list-style-type: none;
 }
+
+.pagination-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  .pagination{
+    display: flex;
+    align-items: center;
+    color: #313131;
+    font-size: 18px;
+    .page{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      width: 48px;
+      border: 1px solid #313131;
+      color: #fff;
+      &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+    .current{
+      background-color: #313131;
+      &:hover{
+        cursor: text;
+        text-decoration: none;
+      }
+    }
+    .prev{
+      margin-right: 30px;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .next{
+      margin-left: 30px;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .first, .last{
+      display: none;
+    }
+  }
+}
