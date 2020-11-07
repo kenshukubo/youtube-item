@@ -25,7 +25,10 @@
       }
       a{
         font-size: 14px;
-        color: #ccc;
+        color: #222;
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
     .content:last-child{

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root "static_pages#home"
   get "/terms",  to: "static_pages#terms"
   get "/privacy_policy",  to: "static_pages#privacy_policy"
+  get "/administrator",  to: "static_pages#administrator"
 
   resources :posts, only: [:index, :new, :create, :destroy]
   resources :youtubers, only: [:index, :new, :create, :show, :destroy]
