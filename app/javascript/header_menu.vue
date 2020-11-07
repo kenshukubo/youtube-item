@@ -10,8 +10,8 @@
           <img :src="closeBtn" @click="closeMenu">
         </div>
         <div class="search-form-wrapper">
-          <input class="search-form">
-          <button class="search-btn">検索</button>
+          <input class="search-form" v-model="text" type="text">
+          <button class="search-btn" @click="search">検索</button>
         </div>
         <ul>
           <li v-for="(category, index) in categories" :key="index" class="category-wrapper">
@@ -41,6 +41,7 @@ export default {
       closeBtn: closeBtn,
       isMenuOpen: false,
       categories: [],
+      text: "",
     }
   },
   created () {
@@ -61,6 +62,11 @@ export default {
     closeMenu: function(){
       this.isMenuOpen = false;
     },
+    search: function(){
+      if(this.text !== null){
+        location.href = `/searches?search=${this.text}`
+      }
+    }
   }
 }
 </script>
@@ -94,13 +100,27 @@ export default {
       }
     }
     .search-form-wrapper{
+      position: relative;
       padding: 15px;
       margin-bottom: 10px;
       .search-form{
-        width: 60%;
+        width: 100%;
         border-radius: 30px;
         border: 1px solid #e7e7e7;
-        padding: 10px 16px 10px 36px;
+        padding: 10px 16px;
+        box-sizing: border-box;
+      }
+      .search-btn{
+        border-radius: 28px;
+        background-color: #333;
+        color: #fff;
+        font-size: 13px;
+        font-weight: bold;
+        height: 30px;
+        padding: 0 10px;
+        position: absolute;
+        right: 20px;
+        top: 18px;
       }
     }
     .category-wrapper{
