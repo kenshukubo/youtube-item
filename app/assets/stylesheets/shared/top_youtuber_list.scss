@@ -4,6 +4,34 @@
     letter-spacing: 0.8px;
     border-left: 3px solid #02bb80;
     padding-left: 16px;
+    .mini-title{
+      display: block;
+      font-size: 11px;
+      font-weight: normal;
+      margin-bottom: 3px;
+    }
+  }
+  .youtuber-list-desc{
+    color: #999;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 6px 0;
+    position: relative;
+    text-align: center;
+    span{
+      background-color: #fff;
+      padding: 0 20px;
+    }
+  }
+  .youtuber-list-desc::before{
+    border-bottom: 1px solid #eee;
+    content: " ";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: -1;
   }
   .youtuber-wrapper{
     display: grid;

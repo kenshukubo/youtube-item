@@ -1,5 +1,11 @@
 <div id="top-youtuber-list">
-  <h2 class="youtuber-list-title">Youtuberのおすすめアイテム</h2>
+  <h2 class="youtuber-list-title">
+    <span class="mini-title">動画内でおすすめしているアイテムを紹介</span>
+    Youtuberのおすすめアイテム
+  </h2>
+  <p class="youtuber-list-desc">
+    <span>Youtuberで選ぶ</span>
+  </p>
   <ul class="youtuber-wrapper">
     <% @youtubers.find_each do |youtuber| %>
       <%= link_to youtuber_path(youtuber.id) do %>
