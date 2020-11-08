@@ -100,6 +100,7 @@ export default {
   background-color: #fff;
   margin-left: auto;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch
   z-index: 100;
   .close-btn{
     height: 70px;
