@@ -93,3 +93,12 @@
     }
   }
 }
+
+//show
+#youtuber-show{
+  .column-main{
+    @media(max-width: 567px){
+      width: 100%;
+    } 
+  }
+}

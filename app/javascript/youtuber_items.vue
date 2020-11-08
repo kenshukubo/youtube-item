@@ -3,7 +3,7 @@
     <div class="youtuber-info">
       <img :src="youtuber.image" class="channel-img">
       <div>
-        <h2><span class="youtuber-name">{{youtuber.name}}</span> のおすすめアイテム</h2>
+        <h2><span class="youtuber-name">{{youtuber.name}}</span> <br class="new-line">のおすすめアイテム</h2>
         <a :href="`https://www.youtube.com/channel/${youtuber.channelId}`" target="_blank" class="channel-link">Youtubeチャンネルへ</a>
       </div>
     </div>
@@ -27,12 +27,14 @@
         <div v-for="(item, index) in post.items" :key="index" class="item-content">
           <div class="item-info">
             <img :src="item.image.thumb_mini.url" class="item-img">
-            <h3 class="item-name">{{item.name}}</h3>
-            <p class="item-price">{{item.price}}円<span class="tax-include">(税込)</span></p>
-            <ul class="item-btn-wrapper">
-              <li><a :href="item.rakuten_url" class="item-link" target="_blank">楽天で詳細をみる</a></li>
-              <li><a :href="item.amazon_url" class="item-link" target="_blank">Amazonで詳細をみる</a></li>
-            </ul>
+            <div>
+              <p class="item-name">{{item.name}}</p>
+              <p class="item-price">{{item.price}}円<span class="tax-include">(税込)</span></p>
+              <ul class="item-btn-wrapper">
+                <li><a :href="item.rakuten_url" class="item-link" target="_blank">楽天で詳細をみる</a></li>
+                <li><a :href="item.amazon_url" class="item-link" target="_blank">Amazonで詳細をみる</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -91,6 +93,12 @@ export default {
   .youtuber-name{
     font-size: 32px;
   }
+  .new-line{
+    display: none;
+    @media(max-width: 767px){
+      display: block;
+    }
+  }
   .channel-link{
     color: #929292;
     cursor: pointer;
@@ -112,6 +120,19 @@ export default {
       padding-left: 15px;
       .post-title{
         font-size: 20px;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        @media(max-width: 567px){
+          font-size: 16px;
+        }
+      }
+      .channel-link{
+        color: #929292;
+        @media(max-width: 567px){
+          font-size: 12px;
+        }
       }
     }
   }
@@ -148,17 +169,27 @@ export default {
     padding: 30px;
     width: 100%;
     box-sizing: border-box;
+    @media(max-width: 567px){
+      padding: 15px;
+    }
     .item-info{
       display: flex;
       flex-direction: column;
       align-items: center;
+      @media(max-width: 567px){
+        flex-direction: row;
+      }
       .item-img{
         max-width: 160px;
         max-height: 160px;
+        @media(max-width: 567px){
+          width: 120px;
+          height: 120px;
+        }
       }
       .item-name{
         margin-bottom: 5px;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.2;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -167,7 +198,7 @@ export default {
       }
       .item-price{
         color: #fd381e;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
         letter-spacing: -.03em;
         line-height: 24px;
@@ -194,6 +225,9 @@ export default {
           line-height: 1.5;
           box-shadow: 0 -4px 0 rgba(0,0,0,0.1) inset;
           display: block !important;
+          @media(max-width: 567px){
+            font-size: 11px;
+          }
         }
         .item-link:hover{
           opacity: .8;
@@ -205,5 +239,9 @@ export default {
 .is-active{
   display: grid;
   grid-template-columns: repeat(2, auto);
+  @media(max-width: 567px){
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
