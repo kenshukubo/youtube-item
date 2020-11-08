@@ -4,34 +4,35 @@
       <img :src="menuBtn">
     </div>
 
-    <div v-if="isMenuOpen" class="menu-wrapper">
+    <div v-if="isMenuOpen" class="menu-wrapper"><!--黒い背景-->
     </div>
-    <nav class="menu" v-if="isMenuOpen">
-      <div class="close-btn">
-        <img :src="closeBtn" @click="closeMenu">
-      </div>
-      <div class="search-form-wrapper">
-        <input class="search-form" v-model="text" type="text">
-        <button class="search-btn" @click="search">検索</button>
-      </div>
-      <ul>
-        <li v-for="(category, index) in categories" :key="index" class="category-wrapper">
-          <a :href="`/categories/${category.id}`" class="category-item">
-            <img :src="category.image">
-            <p>{{category.name}}</p>
-          </a>
-        </li>
-        <li v-for="(category, index) in children_categories" :key="index" class="category-wrapper">
-          <a :href="`/categories/${category.id}`" class="category-item">
-            <img :src="category.image">
-            <p>{{category.name}}</p>
-          </a>
-        </li>
-      </ul>
-      <div class="bottom-close-area" @click="closeMenu">
-        <p class="bottom-close-btn">閉じる</p>
-      </div>
-    </nav>
+    <transition name="right">
+      <nav class="menu" v-if="isMenuOpen">
+        <div class="close-btn">
+          <img :src="closeBtn" @click="closeMenu">
+        </div>
+        <div class="search-form-wrapper">
+          <input class="search-form" v-model="text" type="text">
+          <button class="search-btn" @click="search">検索</button>
+        </div>
+        <ul>
+          <li v-for="(category, index) in categories" :key="index" class="category-wrapper">
+            <a :href="`/categories/${category.id}`" class="category-item">
+              <img :src="category.image">
+              <p>{{category.name}}(すべて)</p>
+            </a>
+          </li>
+          <li v-for="(category, index) in children_categories" :key="index" class="category-wrapper">
+            <a :href="`/categories/${category.id}`" class="category-item">
+              <p>{{category.name}}</p>
+            </a>
+          </li>
+        </ul>
+        <div class="bottom-close-area" @click="closeMenu">
+          <p class="bottom-close-btn">閉じる</p>
+        </div>
+      </nav>
+    </transition>
   </div>
 </template>
 
@@ -141,7 +142,8 @@ export default {
     .category-item{
       display: flex;
       align-items: center;
-      font-weight: 400;
+      font-size: 14px;
+      font-weight: bold;
       padding: 14px 0;
     }
   }
@@ -152,5 +154,12 @@ export default {
       padding: 20px 0;
     } 
   }
+}
+.right-enter-active, .right-leave-active {
+  transform: translate(0px, 0px);
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+.right-enter, .right-leave-to {
+  transform: translateX(100vw) translateX(0px);
 }
 </style>
