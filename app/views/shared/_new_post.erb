@@ -2,16 +2,16 @@
   <h2 class="new-post-title">新着アイテム<span class="update-date">更新日<%= @recentry_update_date %></span></h2>
   <ul class="posts-wrapper">
     <% @posts.find_each do |post| %>
-      <%= link_to youtuber_path(post.youtuber_id) do %>
-        <li class="post-info">
+      <li>
+        <%= link_to youtuber_path(post.youtuber_id), class:"post-info" do %>
           <%= image_tag post.thumbnail.url, class:"post-img"%>
           <h3 class="post-title"><%=post.title%></h3>
           <div class="youtuber-info">
             <%=image_tag Youtuber.find(post.youtuber_id).image.url, class:"youtuber-img" %>
             <span class="youtuber-name"><%= Youtuber.find(post.youtuber_id).name %></span>
           </div>
-        </li>
-      <% end %>
+        <% end %>
+      </li>
     <% end %>
   </ul>
   <%=link_to posts_path, class:"post-index-btn" do %>
