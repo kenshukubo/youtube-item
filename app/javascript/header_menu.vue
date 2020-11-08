@@ -12,7 +12,7 @@
           <img :src="closeBtn" @click="closeMenu">
         </div>
         <div class="search-form-wrapper">
-          <input class="search-form" v-model="text" type="text">
+          <input class="search-form" v-model="text" type="text" placeholder="チャンネル名・アイテム名">
           <button class="search-btn" @click="search">検索</button>
         </div>
         <ul>

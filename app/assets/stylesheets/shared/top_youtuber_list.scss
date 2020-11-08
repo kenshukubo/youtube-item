@@ -9,6 +9,9 @@
       font-size: 11px;
       font-weight: normal;
       margin-bottom: 3px;
+      @media(max-width: 567px){
+        font-size: 8px;
+      }
     }
   }
   .youtuber-list-desc{
@@ -33,7 +36,7 @@
     width: 100%;
     z-index: -1;
   }
-  .youtuber-wrapper{
+  .youtuber-wrapper-for-pc{
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(5, 1fr);
@@ -41,6 +44,9 @@
     margin-bottom: 15px;
     @media(max-width: 991px){
       grid-template-columns: repeat(4, 1fr);
+    }
+    @media(max-width: 567px){
+      display: none;
     }
     .youtuber-info{
       display: flex;
@@ -76,6 +82,49 @@
       display: -webkit-box;
       -webkit-line-clamp: 2;
       overflow: hidden;
+    }
+  }
+  .youtuber-wrapper-for-sp{
+    display: none;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 5px 0 8px 6px;
+    margin-bottom: 10px;
+    @media(max-width: 567px){
+      display: block;
+    }
+    li{
+      width: 100px;
+      display: inline-block;
+      .youtuber-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #f0f0f0;
+        border-radius: 10px;
+        padding: 15px 5px 15px;
+        .channel-img{
+          width: 70px;
+          border-radius: 100%;
+          object-fit: cover;
+          margin-bottom: 10px;
+        }
+        .youtube-name-wrapper{
+          width: 100%;
+          .youtuber-name{
+            font-size: 13px;
+            color: #222;
+            font-weight: bold;
+            height: 35px;
+            width: 100%;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+        }
+      }
     }
   }
   .youtuber-index-btn{

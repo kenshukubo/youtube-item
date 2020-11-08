@@ -6,16 +6,29 @@
   <p class="youtuber-list-desc">
     <span>Youtuberで選ぶ</span>
   </p>
-  <ul class="youtuber-wrapper">
+  <ul class="youtuber-wrapper-for-pc">
     <% @youtubers.find_each do |youtuber| %>
-      <%= link_to youtuber_path(youtuber.id) do %>
-        <li class="youtuber-info">
+      <li>
+        <%= link_to youtuber_path(youtuber.id), class:"youtuber-info" do %>
           <%= image_tag youtuber.image.url, class:"channel-img"%>
           <div>
             <span class="youtuber-name"><%= youtuber.name %></span>
           </div>
-        </li>
-      <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <ul class="youtuber-wrapper-for-sp">
+    <% @youtubers.find_each do |youtuber| %>
+      <li>
+        <%= link_to youtuber_path(youtuber.id), class:"youtuber-info" do %>
+          <%= image_tag youtuber.image.url, class:"channel-img"%>
+          <div class="youtube-name-wrapper">
+            <span class="youtuber-name"><%= youtuber.name %></span>
+          </div>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 

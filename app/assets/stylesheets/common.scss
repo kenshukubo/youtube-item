@@ -13,6 +13,9 @@ body{
   width: 100%;
   padding: 60px;
   box-sizing: border-box;
+  @media(max-width: 767px){
+    padding: 30px 15px;
+  }
   .column{
     display: flex;
   }
