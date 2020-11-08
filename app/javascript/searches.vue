@@ -39,9 +39,6 @@
         <li v-for="(item, index) in items" :key="index" class="item">
           <img :src="item.image.url" class="item-img">
           <div>
-            <a class="youtuber-info">
-            
-            </a>
             <a v-if="item.amazon_url" :href="item.amazon_url" class="item-name" target="_blank">{{item.name}}</a>
             <a v-else-if="item.rakuten_url" :href="item.rakuten_url" class="item-name" target="_blank">{{item.name}}</a>
             <span class="item-price">{{item.price}}円(税込)</span>
@@ -124,6 +121,9 @@ export default {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
   margin-bottom: 15px;
+  @media(max-width: 567px){
+    grid-template-columns: repeat(2, 1fr);
+  } 
   .youtuber-info{
     display: flex;
     flex-direction: column;
@@ -166,6 +166,9 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   margin-bottom: 15px;
+  @media(max-width: 567px){
+    grid-template-columns: repeat(2, 1fr);
+  } 
   .post-info{
     display: flex;
     flex-direction: column;
@@ -200,6 +203,9 @@ export default {
   grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
+  @media(max-width: 567px){
+    grid-template-columns: repeat(1, 1fr);
+  } 
   .item{
     display: flex;
     margin-bottom: 20px;
