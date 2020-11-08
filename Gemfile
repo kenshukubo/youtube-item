@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
+gem 'uglifier', '~> 4.1'
 
 gem 'dotenv-rails'
 gem 'ancestry'
