@@ -12,7 +12,7 @@
     </ul>
     <div class="column-main">
       <h2 class="category-title">Youtuberのおすすめアイテム</h2>
-      <ul class="item-wrapper">
+      <ul class="item-wrapper-for-pc">
         <%= @items.find_each do |item| %>
           <li class="item">
             <%= image_tag item.image.url, class:"item-img" %>
@@ -28,11 +28,54 @@
               <% else %>
                 <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank %>
               <% end %>
+
+              <% item_category = ItemCategory.find_by(item: item) %>
+              <% if item_category.present? %>
+                <%= link_to category_path(item_category.category_id), class:"item-category" do %>
+                  <span class="category-child-title">
+                    <%= item_category.category.name %>
+                  </span>
+                <% end %>
+              <% end %>
+              
               <span class="item-price"><%= item.price %>円(税込)</span>
             </div>
           </li>
         <% end %>
       </ul>
+
+      <ul class="item-wrapper-for-sp">
+        <%= @items.find_each do |item| %>
+          <li class="item">
+            <%= image_tag item.image.url, class:"item-img" %>
+            <div>
+              
+              <%=link_to youtuber_path(item.post.youtuber_id), class:"youtuber-info" do %>
+                <%=image_tag Youtuber.find(item.post.youtuber_id).image.url, class:"channel-icon" %>
+                <p class="channel-name"><%=Youtuber.find(item.post.youtuber_id).name%></p>
+              <% end %>
+
+              <% if item.amazon_url %>
+                <%=link_to item.name, item.amazon_url, class:"item-name", target: :_blank %>
+              <% else %>
+                <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank %>
+              <% end %>
+
+              <% item_category = ItemCategory.find_by(item: item) %>
+              <% if item_category.present? %>
+                <%= link_to category_path(item_category.category_id), class:"item-category" do %>
+                  <span class="category-child-title">
+                    <%= item_category.category.name %>
+                  </span>
+                <% end %>
+              <% end %>
+
+              <span class="item-price"><%= item.price %>円(税込)</span>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+
       <div class="pagination-wrapper">
         <%= paginate @items %>
       </div>

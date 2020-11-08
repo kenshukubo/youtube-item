@@ -1,4 +1,9 @@
-#category-item{
+#category-item{ 
+  .column-main{
+    @media(max-width: 767px){
+      width: 100%;
+    }
+  } 
   .category-title{
     margin-bottom: 10px;
   }
@@ -27,11 +32,14 @@
       padding: 4px 12px;
     }
   }
-  .item-wrapper{
+  .item-wrapper-for-pc{
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+    @media(max-width: 567px){
+      display: none;
+    }
     .item{
       display: flex;
       margin-bottom: 20px;
@@ -69,9 +77,85 @@
           text-decoration: underline;
         }
       }
+      .item-category{
+        display: block;
+        margin-bottom: 5px;
+        &:hover{
+          opacity: .6;
+        }
+        .category-child-title{
+          color: #999;
+          background-color: #fff;
+          font-size: 12px;
+          padding: 3px 7px;
+          border-radius: 16px;
+          box-shadow: 0 1px 2px 0 rgba(0,0,0,0.08);
+        }
+      }
       .item-price{
         color: #999;
         font-size: 12px;
+      }
+    }
+  }
+  .item-wrapper-for-sp{
+    display: none;
+    @media(max-width: 567px){
+      display: block;
+    }
+    .item{
+      display: flex;
+      align-items: center;
+      background: #F5F5F5;
+      margin-bottom: 5px;
+      padding: 10px 5px;
+      border: 1px solid #f0f0f0;
+      .item-img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        object-fit: cover;
+        margin-right: 10px;
+      }        
+      .youtuber-info{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        .channel-icon{
+          width: 28px;
+          border-radius: 100%;
+          object-fit: cover;
+          margin-right: 5px;
+        }
+      }
+      .item-name{
+        font-weight: 600;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        margin-bottom: 3px;
+      }
+      .item-category{
+        display: block;
+        margin-bottom: 5px;
+        .category-child-title{
+          color: #999;
+          background-color: #fff;
+          font-size: 12px;
+          padding: 3px 7px;
+          border-radius: 16px;
+          box-shadow: 0 1px 2px 0 rgba(0,0,0,0.08);
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
+        }
+      }
+      .item-price{
+        color: #999;
+        font-size: 12px;
+        font-weight: bold;
       }
     }
   }
