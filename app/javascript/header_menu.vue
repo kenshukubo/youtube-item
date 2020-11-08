@@ -20,6 +20,12 @@
               <p>{{category.name}}</p>
             </a>
           </li>
+          <li v-for="(category, index) in children_categories" :key="index" class="category-wrapper">
+            <a :href="`/categories/${category.id}`" class="category-item">
+              <img :src="category.image">
+              <p>{{category.name}}</p>
+            </a>
+          </li>
         </ul>
         <div class="bottom-close-area" @click="closeMenu">
           <p class="bottom-close-btn">閉じる</p>
@@ -41,6 +47,7 @@ export default {
       closeBtn: closeBtn,
       isMenuOpen: false,
       categories: [],
+      children_categories: [],
       text: "",
     }
   },
@@ -50,6 +57,7 @@ export default {
     axios.get(url)
     .then(function(res) {
       self.categories = res.data.categories;
+      self.children_categories = res.data.children_categories;
     })
     .catch(function(error) {
       console.log(error);

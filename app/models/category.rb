@@ -7,4 +7,7 @@ class Category < ApplicationRecord
 
   mount_uploader :image, CategoryImageUploader
 
+  scope :order_by_chiledren_item_category, -> {
+    where.not(ancestry: nil).joins(:item_categories).group(:id).order('count(item_id) desc')
+  }
 end
