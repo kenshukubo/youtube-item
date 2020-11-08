@@ -4,6 +4,14 @@
     letter-spacing: 0.8px;
     border-left: 3px solid #02bb80;
     padding-left: 16px;
+    .update-date{
+      color: #999;
+      font-size: 11px;
+      margin-left: 6px;
+    }
+    @media(max-width: 567px){
+      font-size: 20px;
+    }
   }
   .posts-wrapper{
     display: grid;
@@ -11,6 +19,9 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     margin-bottom: 15px;
+    @media(max-width: 567px){
+      grid-template-columns: repeat(2, 1fr);
+    }
     .post-info{
       display: flex;
       flex-direction: column;

@@ -4,6 +4,9 @@
     letter-spacing: 0.8px;
     border-left: 3px solid #02bb80;
     padding-left: 16px;
+    @media(max-width: 567px){
+      font-size: 20px;
+    }
     .mini-title{
       display: block;
       font-size: 11px;

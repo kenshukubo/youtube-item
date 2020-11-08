@@ -1,5 +1,5 @@
 <div id="new-post">
-  <h2 class="new-post-title">新着アイテム</h2>
+  <h2 class="new-post-title">新着アイテム<span class="update-date">更新日<%= @recentry_update_date %></span></h2>
   <ul class="posts-wrapper">
     <% @posts.find_each do |post| %>
       <%= link_to youtuber_path(post.youtuber_id) do %>
