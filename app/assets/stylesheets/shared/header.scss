@@ -22,6 +22,17 @@ header{
     .header-desc{
       color: #313131;
       font-size: 14px;
+      @media(max-width: 567px){
+        display: none;
+      }
+    }
+    .header-desc-for-sp{
+      display: none;
+      color: #313131;
+      font-size: 14px;
+      @media(max-width: 567px){
+        display: block;
+      }
     }
   }
   .serach-area{
