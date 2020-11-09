@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
     @youtubers = Youtuber.all.order(id: :desc).limit(16)
     @posts = Post.all.order(id: :desc).limit(8)
     @categories = Category.where(ancestry: nil)
-    @recentry_update_date = Post&.last&.created_at&.strftime("%m月%d日")
+    # @recentry_update_date = Post&.last&.created_at&.strftime("%m月%d日")
   end
 
   def terms
