@@ -40,13 +40,13 @@ ids.each do |id|
 
   title = response.items[0].snippet.title
 
-  url = response.items[0].snippet.thumbnails.default.url
-  file = "#{Rails.root}/db/images/channel_icon/#{id[1]}.png"
-  open(file, 'wb') do |pass|
-    open(url) do |recieve|
-      pass.write(recieve.read)
-    end
-  end
+  # url = response.items[0].snippet.thumbnails.default.url
+  # file = "#{Rails.root}/db/images/channel_icon/#{id[1]}.png"
+  # open(file, 'wb') do |pass|
+  #   open(url) do |recieve|
+  #     pass.write(recieve.read)
+  #   end
+  # end
 
   Youtuber.create!(
     name: title, 
