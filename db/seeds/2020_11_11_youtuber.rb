@@ -36,13 +36,12 @@ ids.each do |id|
     :id => id[0] #YouTubeチャンネルのIDを指定
   }
 
-  date = 20201111
   response = youtube.list_channels("snippet", options)
 
   title = response.items[0].snippet.title
 
   url = response.items[0].snippet.thumbnails.default.url
-  file = "#{Rails.root}/db/#{date}/#{id[1]}.png"
+  file = "#{Rails.root}/db/images/channel_icon/#{id[1]}.png"
   open(file, 'wb') do |pass|
     open(url) do |recieve|
       pass.write(recieve.read)
