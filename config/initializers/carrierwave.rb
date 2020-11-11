@@ -12,6 +12,7 @@ CarrierWave.configure do |config|
   elsif Rails.env.production?
     config.fog_provider   = 'fog/aws'
     config.fog_directory  = 'production-tubest'
+    config.asset_host = "https://s3.ap-northeast-1.amazonaws.com/production-tubest"
   end
   
 end
