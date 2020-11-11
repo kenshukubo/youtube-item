@@ -10,13 +10,8 @@ CarrierWave.configure do |config|
   if Rails.env.development?
     config.fog_directory  = 'development-tubest'
   elsif Rails.env.production?
+    config.fog_provider   = 'fog/aws'
     config.fog_directory  = 'production-tubest'
   end
-  # elsif Rails.env.staging?
-  #   config.fog_directory  = 'staging-cryptospells-web'
-  #   config.asset_host = 'https://d3a3jeglo6h485.cloudfront.net' #cloudfront用
-  # elsif Rails.env.production?
-  #   config.fog_directory  = 'production-cryptospells-web'
-  #   config.asset_host = 'https://d3n9a7g7xguuos.cloudfront.net' #cloudfront用
   
 end
