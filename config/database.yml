@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: postgresql
+  encoding: utf8
   username: unicode
   password: 5
