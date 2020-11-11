@@ -47,9 +47,10 @@ ids.each do |id|
   #     pass.write(recieve.read)
   #   end
   # end
-
+  date = 20201111
   Youtuber.create!(
     name: title, 
+    image: open("#{Rails.root}/db/#{date}/#{id[1]}.png"),
     channel_id: "#{id[0]}"
   ) if Youtuber.find_by(name: title).blank?
 end
