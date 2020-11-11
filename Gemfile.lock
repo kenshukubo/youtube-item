@@ -525,7 +525,6 @@ DEPENDENCIES
   dotenv-rails
   enum_help
   fog
-  fog-aws
   google-api-client (~> 0.11)
   jbuilder (~> 2.7)
   kaminari (~> 1.2.1)
