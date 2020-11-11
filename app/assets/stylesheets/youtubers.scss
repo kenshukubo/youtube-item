@@ -12,6 +12,9 @@
       grid-template-columns: repeat(4, 1fr);
     }
     @media(max-width: 567px){
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media(max-width: 374px){
       display: none;
     }
     .youtuber-info{
@@ -57,7 +60,7 @@
     white-space: nowrap;
     padding: 5px 0 8px 6px;
     margin-bottom: 10px;
-    @media(max-width: 567px){
+    @media(max-width: 374px){
       display: block;
     }
     li{

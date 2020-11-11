@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @youtubers = Youtuber.all.order(id: :desc).limit(16)
+    @youtubers = Youtuber.all.order(id: :desc).limit(18)
     @posts = Post.all.order(id: :desc).limit(8)
     @categories = Category.where(ancestry: nil)
     # @recentry_update_date = Post&.last&.created_at&.strftime("%m月%d日")
