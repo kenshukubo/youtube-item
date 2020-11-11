@@ -50,7 +50,6 @@ ids.each do |id|
 
   Youtuber.create!(
     name: title, 
-    image: open("#{Rails.root}/db/images/channel_icon/#{id[1]}.png"),
     channel_id: "#{id[0]}"
   ) if Youtuber.find_by(name: title).blank?
 end
