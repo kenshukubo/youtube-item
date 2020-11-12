@@ -39,7 +39,6 @@ ids.each do |id|
       name: name,
       image: open("#{Rails.root}/db/images/item_image/#{id[1]}.png"),
       price: price,
-      post_id: id[2],
       amazon_url: id[3],
       asin: id[0]
     )
