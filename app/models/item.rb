@@ -3,14 +3,14 @@ class Item < ApplicationRecord
   
   has_many :item_categories, dependent: :destroy
   has_many :categories, through: :item_categories
+  has_many :item_posts, dependent: :destroy
+  has_many :posts, through: :item_posts
 
   mount_uploader :image, ItemImageUploader
 
   validates :name, presence: true
   #validates :price, presence: true
   #validates :image, presence: true
-  #validates :amazon_url, presence: true
-  validates :post_id, presence: true
   validates :asin, uniqueness: true
 
   def self.search(search)

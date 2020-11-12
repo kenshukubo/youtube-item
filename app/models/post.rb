@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :youtuber
-  has_many :items, dependent: :destroy
+  has_many :item_posts, dependent: :destroy
+  has_many :items, through: :item_posts
 
   mount_uploader :thumbnail, ThumbnailUploader
 
