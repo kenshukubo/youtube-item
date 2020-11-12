@@ -9,7 +9,7 @@ ids = [
   ['47YnnAAh3o0', 2, 1, nil],
   ['uLSE9dJcBVI', 3, 1, nil],
   ['vTeUxlZapeM', 4, 2, 'home_time'],
-  ['4EAt82vGlFA', 5, 2, nil]
+  ['4EAt82vGlFA', 5, 2, nil],
   ['YoI23FPPYvU', 6, 3, 'daily_make'],
   ['BVEccxsvOTI', 7, 3, nil],
   ['JvbP1b8vfcI', 8, 3, nil],
