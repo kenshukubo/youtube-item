@@ -115,6 +115,7 @@ export default {
     margin-bottom: 10px;
     .post-img{
       width: 150px;
+      height: 110px
     }
     .post-detail{
       padding-left: 15px;

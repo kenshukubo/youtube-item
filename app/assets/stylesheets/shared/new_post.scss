@@ -25,6 +25,7 @@
     .post-info{
       display: flex;
       flex-direction: column;
+      height: 100%;
       cursor: pointer;
       &:hover{
         .post-img{
@@ -51,6 +52,8 @@
       }
       .youtuber-info{
         display: flex;
+        margin: auto 0;
+        margin-bottom: 0;
         .youtuber-img{
           width: 30px;
           height: 30px;
