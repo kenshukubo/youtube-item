@@ -21,13 +21,13 @@ ids.each do |id|
 
   title = response.items[0].snippet.title
 
-  url = response.items[0].snippet.thumbnails.high.url
-  file = "#{Rails.root}/db/images/video_image/#{id[1]}.png"
-  open(file, 'wb') do |pass|
-    open(url) do |recieve|
-      pass.write(recieve.read)
-    end
-  end
+  # url = response.items[0].snippet.thumbnails.high.url
+  # file = "#{Rails.root}/db/images/video_image/#{id[1]}.png"
+  # open(file, 'wb') do |pass|
+  #   open(url) do |recieve|
+  #     pass.write(recieve.read)
+  #   end
+  # end
 
   date = 20201112
 
