@@ -7,9 +7,5 @@ json.categories do
         json.third_categories Category.where(ancestry: "#{category.id}/#{second_category.id}")
       end
     end
-    #   json.array!(Category.where(ancestry: category.id)).each do |second_category|
-    #     json.third_categories Category.where(ancestry: "`#{category.id}/#{second_category.id}`")
-    #   end
-    # end
   end
 end
