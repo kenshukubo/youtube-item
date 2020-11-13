@@ -1,5 +1,5 @@
-require 'paapi'
 
+require 'paapi'
 @client = Paapi::Client.new(
   access_key: ENV["AMAZON_APIKEY"],
   secret_key: ENV["AMAZON_SECRETKEY"],
@@ -8,11 +8,7 @@ require 'paapi'
 )
 
 ids = [
-  ['B07WR6GXN9', 1, 7, 'https://amzn.to/2TimJcE'],
-  ['B00L87WZCU', 2, 7, 'https://amzn.to/2HfBvib'],
-  ['B01J1ZBJSG', 3, 7, 'https://amzn.to/35riD7A'],
-  ['B01GPFDCF8', 4, 7, 'https://amzn.to/3dNHtT7'],
-  ['B07VWPRBDH', 5, 7, 'https://amzn.to/3kpq6dN'],
+  ['B07WR6GXN9', 1]
 ]
 
 ids.each do |id|
@@ -21,7 +17,7 @@ ids.each do |id|
 
   items.each do |item|
     name = item.title #商品名
-
+    amazon_url = item.detail_url
     url = item.image_url #画像
     file = "#{Rails.root}/db/images/item_image/#{id[1]}.png"
     open(file, 'wb') do |pass|
@@ -39,7 +35,7 @@ ids.each do |id|
       name: name,
       image: open("#{Rails.root}/db/images/item_image/#{id[1]}.png"),
       price: price,
-      amazon_url: id[3],
+      amazon_url: amazon_url,
       asin: id[0]
     )
   end
