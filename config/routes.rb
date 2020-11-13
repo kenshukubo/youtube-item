@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :youtubers, only: [:show]
       resources :header_menu, only: [:index]
+      resources :widget, only: [:index]
     end
   end
 end

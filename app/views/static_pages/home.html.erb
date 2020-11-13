@@ -13,8 +13,12 @@
 
       </div>
 
-      <div class="column-side">
-        <%= render "shared/widget" %>
+      <div class="column-side" id="widget">
+        <Widget/>
+      </div>
+      <%= javascript_pack_tag 'widget' %>
+      <%= stylesheet_pack_tag 'widget' %>
+        
       </div>
     </div>
 
