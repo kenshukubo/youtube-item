@@ -1,4 +1,3 @@
-
 require 'paapi'
 @client = Paapi::Client.new(
   access_key: ENV["AMAZON_APIKEY"],
