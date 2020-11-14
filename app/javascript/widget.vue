@@ -25,6 +25,15 @@
         </li>
       </ul>
     </ul>
+    <h3 class="post-category-title">動画ネタ</h3>
+    <ul class="category-list">
+      <li class="post-category" v-for="(category, index) in postCategories" :key="index">
+        <a :href="`/categories/${category.id}`" class="category-info">
+          <img :src="category.image">
+          <p class="category-name">{{category.name}}</p>
+        </a>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -34,6 +43,7 @@ export default {
   data: function () {
     return {
       categories: [],
+      postCategories: [],
       isActive: ""
     }
   },
@@ -43,6 +53,7 @@ export default {
     axios.get(url)
     .then(function(res) {
       self.categories = res.data.categories;
+      self.postCategories = res.data.post_categories;
     })
     .catch(function(error) {
       console.log(error);
@@ -113,5 +124,25 @@ export default {
       }
     }
   }
+  .post-category{
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+      }
+    .category-info{
+      display: flex;
+      align-items: center;
+      padding: 12px 16px 12px 0px;
+      .category-name{
+        margin-left: 5px;
+      }
+    }
+  }
 }
+.post-category-title{
+  font-size: 18px;
+  padding: 12px 16px 12px 0px;
+  font-weight: 600;
+}
+
 </style>

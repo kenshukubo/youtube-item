@@ -11,3 +11,11 @@ json.categories do
     end
   end
 end
+
+json.post_categories do
+  json.array!(@post_categories) do |category|
+    json.id    category.id
+    json.name  category.name
+    json.image category.image.url
+  end
+end

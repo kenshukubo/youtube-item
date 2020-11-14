@@ -12,10 +12,10 @@ json.categories do
   end
 end
 
-json.children_categories do
-  json.array!(@children_categories) do |category|
-    json.image category.image.url
-    json.name  category.name
+json.post_categories do
+  json.array!(@post_categories) do |category|
     json.id    category.id
+    json.name  category.name
+    json.image category.image.url
   end
 end

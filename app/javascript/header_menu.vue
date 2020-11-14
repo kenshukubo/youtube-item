@@ -38,6 +38,16 @@
             </li>
           </ul>
         </ul>
+        
+        <h3 class="post-category-title">動画ネタ</h3>
+        <ul class="category-list">
+          <li class="post-category" v-for="(category, index) in postCategories" :key="index">
+            <a :href="`/categories/${category.id}`" class="category-info">
+              <img :src="category.image">
+              <p class="category-name">{{category.name}}</p>
+            </a>
+          </li>
+        </ul>
         <div class="bottom-close-area" @click="closeMenu">
           <p class="bottom-close-btn">閉じる</p>
         </div>
@@ -58,7 +68,7 @@ export default {
       closeBtn: closeBtn,
       isMenuOpen: false,
       categories: [],
-      children_categories: [],
+      postCategories: [],
       text: "",
       isActive: "",
     }
@@ -69,7 +79,7 @@ export default {
     axios.get(url)
     .then(function(res) {
       self.categories = res.data.categories;
-      self.children_categories = res.data.children_categories;
+      self.postCategories = res.data.post_categories;
     })
     .catch(function(error) {
       console.log(error);
@@ -173,7 +183,7 @@ export default {
       align-items: center;
       justify-content: space-between;
       padding: 12px 16px;
-      cursor: pointer;
+      border-bottom: 1px solid #e7e7e7;
       .arrow-img{
         width: 16px;
         height: 16px;
@@ -186,6 +196,23 @@ export default {
         padding: 8px 0;
       }
     }
+    .post-category{
+      .category-info{
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        border-bottom: 1px solid #e7e7e7;
+        .category-name{
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  .post-category-title{
+    font-size: 16px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
   }
   .bottom-close-area{
     border: 1px solid #e7e7e7;
