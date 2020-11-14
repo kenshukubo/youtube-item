@@ -5,20 +5,20 @@
     <ul class="category-list" v-for="(category, index) in categories" :key="index">
       <li class="first-category">
         <a :href="`/categories/${category.id}`">
-          <p>{{category.name}}(すべて)</p>
+          <p class="category-name">{{category.name}}(すべて)</p>
         </a>
       </li>
       <ul>
         <li v-for="(second_category, index) in category.second_categories" :key="index" @click="selectCategory(index)">
           <a class="second-category">
-            <p>{{second_category.name}}</p>
+            <p class="category-name">{{second_category.name}}</p>
             <img :src="`/assets/images/pull-up.png`" v-if="isActive === index" class="arrow-img">
             <img :src="`/assets/images/pull-down.png`" v-else class="arrow-img">
           </a>
           <ul v-if="isActive === index" class="drop-menu">
             <li v-for="(third_category, index) in second_category.third_categories" :key="index">
               <a :href="`/categories/${third_category.id}`" class="third-category" >
-                <p>{{third_category.name}}</p>
+                <p class="category-name">{{third_category.name}}</p>
               </a>
             </li>
           </ul>
@@ -67,9 +67,21 @@ export default {
   font-weight: bold;
   padding-left: 16px;
   margin-bottom: 10px;
+  @media(max-width: 910px){
+    font-size: 20px
+  }
 }
 .category-list{
   font-size: 18px;
+  @media(max-width: 910px){
+    font-size: 16px
+  }
+  .category-name{
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
   .first-category{
     padding: 8px 0;
     margin-bottom: 8px;
