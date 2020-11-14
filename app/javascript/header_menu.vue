@@ -15,18 +15,28 @@
           <input class="search-form" v-model="text" type="text" placeholder="チャンネル名・アイテム名">
           <button class="search-btn" @click="search">検索</button>
         </div>
-        <ul>
-          <li v-for="(category, index) in categories" :key="index" class="category-wrapper">
-            <a :href="`/categories/${category.id}`" class="category-item">
-              <img :src="category.image">
-              <p>{{category.name}}(すべて)</p>
+        <ul class="category-list" v-for="(category, index) in categories" :key="index">
+          <li class="first-category">
+            <a :href="`/categories/${category.id}`">
+              <p class="category-name">{{category.name}}(すべて)</p>
             </a>
           </li>
-          <li v-for="(category, index) in children_categories" :key="index" class="category-wrapper">
-            <a :href="`/categories/${category.id}`" class="category-item">
-              <p>{{category.name}}</p>
-            </a>
-          </li>
+          <ul>
+            <li v-for="(second_category, index) in category.second_categories" :key="index" @click="selectCategory(index)">
+              <a class="second-category">
+                <p class="category-name">{{second_category.name}}</p>
+                <img :src="`/assets/images/pull-up.png`" v-if="isActive === index" class="arrow-img">
+                <img :src="`/assets/images/pull-down.png`" v-else class="arrow-img">
+              </a>
+              <ul v-if="isActive === index" class="drop-menu">
+                <li v-for="(third_category, index) in second_category.third_categories" :key="index">
+                  <a :href="`/categories/${third_category.id}`" class="third-category" >
+                    <p class="category-name">{{third_category.name}}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </ul>
         <div class="bottom-close-area" @click="closeMenu">
           <p class="bottom-close-btn">閉じる</p>
@@ -50,6 +60,7 @@ export default {
       categories: [],
       children_categories: [],
       text: "",
+      isActive: "",
     }
   },
   created () {
@@ -75,7 +86,14 @@ export default {
       if(this.text !== null){
         location.href = `/searches?search=${this.text}`
       }
-    }
+    },
+    selectCategory: function(i){
+      if(this.isActive === i){
+        this.isActive = null;
+      }else{
+        this.isActive = i;
+      }
+    },
   }
 }
 </script>
@@ -137,15 +155,36 @@ export default {
       top: 18px;
     }
   }
-  .category-wrapper{
-    padding-left: 24px;
-    margin-bottom: 10px;
-    .category-item{
+  .category-list{
+    font-size: 16px;
+    .category-name{
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+    }
+    .first-category{
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .second-category{
       display: flex;
       align-items: center;
-      font-size: 14px;
-      font-weight: bold;
-      padding: 14px 0;
+      justify-content: space-between;
+      padding: 12px 16px;
+      cursor: pointer;
+      .arrow-img{
+        width: 16px;
+        height: 16px;
+      }
+    }
+    .drop-menu{
+      padding-left: 20px;
+      .third-category{
+        display: block;
+        padding: 8px 0;
+      }
     }
   }
   .bottom-close-area{
