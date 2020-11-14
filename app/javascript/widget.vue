@@ -63,13 +63,10 @@ export default {
 .header-sidebar{
   border-left: 3px solid #02bb80;
   color: #313131;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   padding-left: 16px;
   margin-bottom: 10px;
-  @media(max-width: 910px){
-    font-size: 20px
-  }
 }
 .category-list{
   font-size: 18px;
