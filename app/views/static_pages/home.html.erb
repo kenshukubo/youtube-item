@@ -1,35 +1,30 @@
 <div id="top">
   <div class="container column">
+
     <div class="display-for-pc">
       <div class="column-main">
-
         <div class="content">
           <%= render "shared/top_youtuber_list" %>
         </div>
-
         <div class="content">
           <%= render "shared/new_post" %>
         </div>
-
       </div>
-
       <div class="column-side" id="widget">
         <Widget/>
       </div>
       <%= javascript_pack_tag 'widget' %>
       <%= stylesheet_pack_tag 'widget' %>
-        
     </div>
 
     <div class="display-for-sp">
-
       <div class="content">
         <%= render "shared/top_youtuber_list" %>
       </div>
-
       <div class="content">
         <%= render "shared/new_post" %>
       </div>
     </div>
+
   </div>
 </div>
