@@ -12,8 +12,8 @@
         <li v-for="(second_category, index) in category.second_categories" :key="index" @click="selectCategory(index)">
           <a class="second-category">
             <p class="category-name">{{second_category.name}}</p>
-            <img :src="`/assets/images/pull-up.png`" v-if="isActive === index" class="arrow-img">
-            <img :src="`/assets/images/pull-down.png`" v-else class="arrow-img">
+            <img :src="pullUpBtn" v-if="isActive === index" class="arrow-img">
+            <img :src="pullDownBtn" v-else class="arrow-img">
           </a>
           <ul v-if="isActive === index" class="drop-menu">
             <li v-for="(third_category, index) in second_category.third_categories" :key="index">
@@ -38,13 +38,17 @@
 </template>
 <script>
 import axios from 'packs/axios'
+import pullUpBtn from 'packs/components/widget/images/pull-up.png'
+import pullDownBtn from 'packs/components/widget/images/pull-down.png'
 
 export default {
   data: function () {
     return {
       categories: [],
       postCategories: [],
-      isActive: ""
+      isActive: "",
+      pullUpBtn: pullUpBtn,
+      pullDownBtn: pullDownBtn
     }
   },
   created () {
