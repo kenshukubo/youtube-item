@@ -12,7 +12,7 @@
           <img :src="closeBtn" @click="closeMenu">
         </div>
         <div class="search-form-wrapper">
-          <input class="search-form" v-model="text" type="text" placeholder="チャンネル名・アイテム名">
+          <input class="search-form" v-model="text" type="text" @keydown.enter="trigger" placeholder="チャンネル名・アイテム名">
           <button class="search-btn" @click="search">検索</button>
         </div>
         <ul class="category-list" v-for="(category, index) in categories" :key="index">
@@ -71,6 +71,7 @@ export default {
       postCategories: [],
       text: "",
       isActive: "",
+      setCanMessageSubmit: false
     }
   },
   created () {
@@ -93,6 +94,13 @@ export default {
       this.isMenuOpen = false;
     },
     search: function(){
+      if(this.text !== null){
+        location.href = `/searches?search=${this.text}`
+      }
+    },
+    trigger:  function(event) {
+      // 日本語入力中のEnterキー操作は無効にする
+      if (event.keyCode !== 13) return;
       if(this.text !== null){
         location.href = `/searches?search=${this.text}`
       }
@@ -143,7 +151,7 @@ export default {
   }
   .search-form-wrapper{
     position: relative;
-    padding: 15px;
+    padding: 0 15px 15px 15px;
     margin-bottom: 10px;
     .search-form{
       width: 100%;
@@ -162,7 +170,7 @@ export default {
       padding: 0 10px;
       position: absolute;
       right: 20px;
-      top: 18px;
+      top: 3px;
     }
   }
   .category-list{
