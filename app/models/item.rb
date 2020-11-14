@@ -1,8 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :post
   
-  has_many :item_categories, dependent: :destroy
-  has_many :categories, through: :item_categories
+  has_many :post_item_categories, dependent: :destroy
+  has_many :categories, through: :post_item_categories
   has_many :item_posts, dependent: :destroy
   has_many :posts, through: :item_posts
 

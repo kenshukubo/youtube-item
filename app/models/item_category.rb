@@ -1,4 +1,4 @@
-class ItemCategory < ApplicationRecord
+class PostItemCategory < ApplicationRecord
   belongs_to :item
   belongs_to :category
 end

@@ -29,7 +29,7 @@
                 <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank %>
               <% end %>
 
-              <% item_category = ItemCategory.find_by(item: item) %>
+              <% item_category = PostItemCategory.find_by(item: item) %>
               <% if item_category.present? %>
                 <%= link_to category_path(item_category.category_id), class:"item-category" do %>
                   <span class="category-child-title">
@@ -61,7 +61,7 @@
                 <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank %>
               <% end %>
 
-              <% item_category = ItemCategory.find_by(item: item) %>
+              <% item_category = PostItemCategory.find_by(item: item) %>
               <% if item_category.present? %>
                 <%= link_to category_path(item_category.category_id), class:"item-category" do %>
                   <span class="category-child-title">
