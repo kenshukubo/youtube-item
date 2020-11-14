@@ -89,6 +89,7 @@ export default {
     font-size: 16px
   }
   .category-name{
+    font-size: 16px;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     -webkit-line-clamp: 1;
