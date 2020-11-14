@@ -2,6 +2,7 @@ class Category < ApplicationRecord
   has_ancestry
   has_many :post_item_categories, dependent: :destroy
   has_many :items, through: :post_item_categories
+  has_many :posts, through: :post_item_categories
 
   validates :name, presence: true
 

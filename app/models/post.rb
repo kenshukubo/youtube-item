@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :youtuber
+  has_many :post_item_categories, dependent: :destroy
+  has_many :categories, through: :post_item_categories
   has_many :item_posts, dependent: :destroy
   has_many :items, through: :item_posts
 
