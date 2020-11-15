@@ -5,9 +5,10 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :image
       t.integer :price
-      t.string :amazon_url
-      t.string :rakuten_url
-      t.string :url
+      t.string :asin
+      t.text :amazon_url
+      t.text :rakuten_url
+      t.text :url
 
       t.timestamps
     end
