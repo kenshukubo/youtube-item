@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   validates :name, presence: true
   #validates :price, presence: true
   #validates :image, presence: true
-  validates :asin, uniqueness: true
+  validates :asin, uniqueness: true, allow_nil: true
 
   def self.search(search)
     return Item.all unless search
