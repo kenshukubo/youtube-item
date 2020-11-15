@@ -12,16 +12,16 @@
     </ul>
     <div class="column-main">
       <h2 class="category-title">Youtuberのおすすめアイテム</h2>
-      <% if false %>
         <ul class="item-wrapper-for-pc">
           <%= @items.find_each do |item| %>
             <li class="item">
               <%= image_tag item.image.url, class:"item-img" %>
               <div>
                 
-                <%=link_to youtuber_path(item.post.youtuber_id), class:"youtuber-info" do %>
-                  <%=image_tag Youtuber.find(item.post.youtuber_id).image.url, class:"channel-icon" %>
-                  <p class="channel-name"><%=Youtuber.find(item.post.youtuber_id).name%></p>
+                <%= ItemPost.where(item: item).find_each do |item_post| %>
+                  <%=link_to youtuber_path(item_post.post.youtuber_id), class:"youtuber-info" do %>
+                    <%=image_tag Youtuber.find(item_post.post.youtuber_id).image.url, class:"channel-icon" %>
+                  <% end %>
                 <% end %>
 
                 <% if item.amazon_url %>
@@ -44,18 +44,17 @@
             </li>
           <% end %>
         </ul>
-      <% end %>
 
-      <% if false %>
         <ul class="item-wrapper-for-sp">
           <%= @items.find_each do |item| %>
             <li class="item">
               <%= image_tag item.image.url, class:"item-img" %>
               <div>
                 
-                <%=link_to youtuber_path(item.post.youtuber_id), class:"youtuber-info" do %>
-                  <%=image_tag Youtuber.find(item.post.youtuber_id).image.url, class:"channel-icon" %>
-                  <p class="channel-name"><%=Youtuber.find(item.post.youtuber_id).name%></p>
+                <%= ItemPost.where(item: item).find_each do |item_post| %>
+                  <%=link_to youtuber_path(item_post.post.youtuber_id), class:"youtuber-info" do %>
+                    <%=image_tag Youtuber.find(item_post.post.youtuber_id).image.url, class:"channel-icon" %>
+                  <% end %>
                 <% end %>
 
                 <% if item.amazon_url %>
@@ -78,13 +77,10 @@
             </li>
           <% end %>
         </ul>
-      <% end %>
 
-      <% if false %>
         <div class="pagination-wrapper">
           <%= paginate @items %>
         </div>
-      <% end %>
     </div>
   </div>
 </div>
