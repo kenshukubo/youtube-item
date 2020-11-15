@@ -19,7 +19,14 @@ ids = [
   ['B07WD99GQ6', 10, 'https://amzn.to/36cJq83', 'https://hb.afl.rakuten.co.jp/ichiba/1da50f72.2d4a9533.1da50f73.1a5769a9/_RTLink13434?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fblanc-lapin%2Fyslip0000019%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MCwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9']
 ]
 
+target_ids = []
 ids.each do |id|
+  if Item.find(id[1]).brank?
+    target_ids << id
+  end
+end
+
+target_ids.each do |id|
   response = @client.get_items(item_ids: id[0])
   items = response.items
 
@@ -34,8 +41,12 @@ ids.each do |id|
     # end
 
     price = ""
-    item.listings.each do |listing|
-      price = listing.price["Amount"] #価格
+    if item.listings.blank?
+      price = nil
+    else
+      item.listings.each do |listing|
+        price = listing.price["Amount"] #価格
+      end
     end
 
     date = 20201115
