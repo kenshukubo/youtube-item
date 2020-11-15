@@ -1,4 +1,4 @@
-class CreateItemCategories < ActiveRecord::Migration[6.0]
+class CreatePostItemCategories < ActiveRecord::Migration[6.0]
   def change
     create_table :post_item_categories do |t|
       t.references :post, type: :bigint, foreign_key: true
