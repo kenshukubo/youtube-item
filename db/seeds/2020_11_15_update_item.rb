@@ -1,3 +1,5 @@
+date = 20201115
+
 ids = [
   ['cosmelink:10044082', 10, 'https://amzn.to/2IbD3tJ', 'B019MARIVM'],
   ['cosmeland:10143611', 11, 'https://amzn.to/38hogZh', 'B078YK68R1'],
@@ -15,8 +17,6 @@ ids.each do |id|
     name = item.name
     price = item.price
     rakuten_url = item.affiliate_url
-
-    date = 20201115
 
     Item.find(id[1]).update(
       name: name,
