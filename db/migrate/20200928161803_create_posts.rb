@@ -5,7 +5,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.timestamps
       t.string "title"
       t.string "thumbnail"
-      t.integer "category"
       t.string "video_id"
     end
   end
