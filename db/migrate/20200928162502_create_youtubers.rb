@@ -4,6 +4,7 @@ class CreateYoutubers < ActiveRecord::Migration[6.0]
       t.string "name"
       t.integer "category"
       t.string "image"
+      t.string "channel_id"
       t.timestamps
     end
   end
