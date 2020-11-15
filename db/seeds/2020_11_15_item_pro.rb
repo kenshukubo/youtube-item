@@ -21,7 +21,7 @@ ids = [
 
 target_ids = []
 ids.each do |id|
-  if Item.find(id[1]).brank?
+  if Item.find(id[1]).blank?
     target_ids << id
   end
 end
