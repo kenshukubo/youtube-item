@@ -3,7 +3,7 @@ class CreateYoutubers < ActiveRecord::Migration[6.0]
     create_table :youtubers do |t|
       t.string "name"
       t.integer "category"
-      t.string "image"
+      t.text "image"
       t.string "channel_id"
       t.timestamps
     end
