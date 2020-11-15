@@ -17,9 +17,7 @@
         </div>
         <ul class="category-list" v-for="(category, index) in categories" :key="index">
           <li class="first-category">
-            <a :href="`/categories/${category.id}`">
-              <p class="category-name">{{category.name}}(すべて)</p>
-            </a>
+            <p>{{category.name}}(すべて)</p>
           </li>
           <ul>
             <li v-for="(second_category, index) in category.second_categories" :key="index" @click="selectCategory(index)">
