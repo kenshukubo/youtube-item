@@ -18,7 +18,7 @@ ids.each do |id|
 
     date = 20201115
 
-    Item.update!(
+    Item.update(
       name: name,
       image: open("#{Rails.root}/db/#{date}/#{id[1]}.png"),
       price: price,
