@@ -1,7 +1,0 @@
-category = Category.create(name: '動画ネタ')
-category.children.create!(name: 'モーニングルーティン', image: open("#{Rails.root}/db/images/category_icon/sun.png"))
-category.children.create!(name: 'ナイトルーティン', image: open("#{Rails.root}/db/images/category_icon/moon.png"))
-category.children.create!(name: 'バッグの中身', image: open("#{Rails.root}/db/images/category_icon/bag.png"))
-category.children.create!(name: 'ポーチの中身', image: open("#{Rails.root}/db/images/category_icon/pouch.png"))
-category.children.create!(name: 'おうち時間', image: open("#{Rails.root}/db/images/category_icon/house.png"))
-category.children.create!(name: '毎日メイク', image: open("#{Rails.root}/db/images/category_icon/cosme.png"))

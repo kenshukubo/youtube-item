@@ -34,3 +34,11 @@ Category.find_by(name: 'その他').children.create!(name: 'メイク雑貨・�
 Category.find_by(name: 'その他').children.create!(name: 'ネイル用品')
 Category.find_by(name: 'その他').children.create!(name: '香水')
 Category.find_by(name: 'その他').children.create!(name: 'サプリメント')
+
+category = Category.create(name: '動画ネタ')
+category.children.create!(name: 'モーニングルーティン', image: open("#{Rails.root}/db/2020post_category/sun.png"))
+category.children.create!(name: 'ナイトルーティン', image: open("#{Rails.root}/db/2020post_category/moon.png"))
+category.children.create!(name: 'バッグの中身', image: open("#{Rails.root}/db/2020post_category/bag.png"))
+category.children.create!(name: 'ポーチの中身', image: open("#{Rails.root}/db/2020post_category/pouch.png"))
+category.children.create!(name: 'おうち時間', image: open("#{Rails.root}/db/2020post_category/house.png"))
+category.children.create!(name: '毎日メイク', image: open("#{Rails.root}/db/2020post_category/cosme.png"))

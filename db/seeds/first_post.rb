@@ -92,7 +92,7 @@ ids = [
   ['i6MmHtDkgsI', 85, 18],
   ['Rq3CmwL8wO0', 86, 18],
   ['WMxRm5xJJlE', 87, 18],
-  ['gXRELoIeVIQ', 88, 18],
+  ['2wcjZsu9fGc', 88, 18],
   ['gXRELoIeVIQ', 89, 18],
   ['i1VKYZiXfEs', 90, 18],
   ['mPVRj7u4eM0', 91, 18],
@@ -127,11 +127,9 @@ ids.each do |id|
   #   end
   # end
 
-  date = 20201112
-
   Post.create!(
     title: title, 
-    thumbnail: open("#{Rails.root}/db/#{date}/#{id[1]}.png"),
+    thumbnail: open("#{Rails.root}/db/2020post/#{id[1]}.png"),
     video_id: "#{id[0]}",
     youtuber_id: id[2]
   ) if Post.find_by(video_id: id[0]).blank?
