@@ -8,7 +8,6 @@ require 'open-uri'
 )
 
 ids = [
-  ['B081CK1JW8', 19, 'https://amzn.to/3k4rWjt', nil],
   ['B06X9ZNFCW', 20, 'https://amzn.to/38LVj7X', nil],
   ['B07BL1K1QT', 21, 'https://amzn.to/3pv3iMG', 'https://hb.afl.rakuten.co.jp/ichiba/1dab93b3.956230df.1dab93b4.01b80ab6/_RTLink13434?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbeautyeru%2Flancome_browpodery%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MCwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9'],
   ['B01MR6E3XU', 22, 'https://amzn.to/32QS5fF', nil],
@@ -21,13 +20,13 @@ ids.each do |id|
 
   items.each do |item|
     name = item.title #商品名
-    url = item.image_url #画像
-    file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
-    open(file, 'wb') do |pass|
-      open(url) do |recieve|
-        pass.write(recieve.read)
-      end
-    end
+    # url = item.image_url #画像
+    # file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
+    # open(file, 'wb') do |pass|
+    #   open(url) do |recieve|
+    #     pass.write(recieve.read)
+    #   end
+    # end
 
     price = ""
     if item.listings.present?
