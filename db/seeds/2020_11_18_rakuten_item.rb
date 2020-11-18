@@ -46,7 +46,7 @@ ids.each do |id|
       item_number: id[1],
       image: open("#{Rails.root}/db/2020amazon_item/#{id[1]}.png"),
       price: price,
-      amazon_url: id[2],
+      amazon_url: id[4],
       asin: asin,
       rakuten_url: rakuten_url,
       url: id[0]
