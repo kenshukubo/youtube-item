@@ -20,7 +20,7 @@ ids.each do |id|
     rakuten_url = item.affiliate_url
     url = item["mediumImageUrls"][0]
 
-    file = "#{Rails.root}/db/images/2020amazon_item/#{id[1]}.png"
+    file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
     open(file, 'wb') do |pass|
       open(url) do |recieve|
         pass.write(recieve.read)
@@ -44,7 +44,7 @@ ids.each do |id|
     Item.create!(
       name: name,
       item_number: id[1],
-      image: open("#{Rails.root}/db/images/2020amazon_item/#{id[1]}.png"),
+      image: open("#{Rails.root}/db/2020amazon_item/#{id[1]}.png"),
       price: price,
       amazon_url: id[2],
       asin: asin,
