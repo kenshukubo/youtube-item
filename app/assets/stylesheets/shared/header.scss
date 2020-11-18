@@ -16,22 +16,10 @@ header{
     .header-icon{
       display: flex;
       align-items: center;
-      .icon-img{
-        height: 65px;
-        margin-right: 14px;
-        @media(max-width: 910px){
-          display: none;
-        }
-      }
       .site-logo{
         font-size: 42px;
         letter-spacing: 0.4px;
         margin-right: 14px;
-        display: none;
-        @media(max-width: 910px){
-          margin-right: 7px;
-          display: block;
-        }
         @media(max-width: 567px){
           margin-right: 7px;
         }
