@@ -186,6 +186,7 @@ export default {
         @media(max-width: 567px){
           width: 120px;
           height: 120px;
+          margin-right: 10px;
         }
       }
       .item-name{
