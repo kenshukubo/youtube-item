@@ -5,7 +5,7 @@ class YoutubersController < ApplicationController
   end
 
   def show
-    @youtuber = Youtuber.find_by(params[:id])
+    @youtuber = Youtuber.find(params[:id])
   end
 
 end
