@@ -183,6 +183,7 @@ export default {
       .item-img{
         max-width: 160px;
         max-height: 160px;
+        margin-bottom: 10px;
         @media(max-width: 567px){
           width: 120px;
           height: 120px;
