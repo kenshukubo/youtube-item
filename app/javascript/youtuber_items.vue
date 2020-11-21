@@ -31,8 +31,8 @@
               <p class="item-name">{{item.name}}</p>
               <p class="item-price">{{item.price}}円<span class="tax-include">(税込)</span></p>
               <ul class="item-btn-wrapper">
-                <li><a :href="item.rakuten_url" class="item-link" target="_blank">楽天で詳細をみる</a></li>
-                <li><a :href="item.amazon_url" class="item-link" target="_blank">Amazonで詳細をみる</a></li>
+                <li><a :href="item.rakuten_url" class="item-link" target="_blank" rel="noopener">楽天で詳細をみる</a></li>
+                <li><a :href="item.amazon_url" class="item-link" target="_blank" rel="noopener">Amazonで詳細をみる</a></li>
               </ul>
             </div>
           </div>
