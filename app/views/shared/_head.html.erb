@@ -1,5 +1,19 @@
 <title><%= content_for?(:title) ? yield(:title) + " | Tubest" : "Tubest｜Youtuberのおすすめアイテムまとめ"%></title>
 <meta name="description" content="「Tubest」はYoutuberが動画内でおすすめしているアイテムをまとめています。">
+
+<meta property="og:url" content="http://tubest.jp" />
+<meta property="og:title" content="Tubest｜Youtuberのおすすめアイテムまとめ" />
+<meta property="og:description" content="「Tubest」はYoutuberが動画内でおすすめしているアイテムをまとめています。" />
+<meta property="og:image" content="<%= root_url %>ogps/ogp.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="" />
+<meta property="og:site_name" content="「Tubest」はYoutuberが動画内でおすすめしているアイテムをまとめています。" />
+<meta property="og:type" content="website">
+
+<meta property="og:locale" content="ja_JP" />
+<meta property="fb:app_id" content="">
+
 <%= csrf_meta_tags %>
 <%= csp_meta_tag %>
 
