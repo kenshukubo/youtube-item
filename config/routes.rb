@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'posts/new'
-  #devise_for :admin_users
-  #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "static_pages#home"
   get "/terms",  to: "static_pages#terms"
   get "/privacy_policy",  to: "static_pages#privacy_policy"
