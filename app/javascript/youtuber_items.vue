@@ -15,15 +15,20 @@
           <a :href="`https://www.youtube.com/watch?v=${post.video_id}`" target="_blank" class="channel-link">Youtubeリンク</a>
         </div>
       </div>
-      <div v-if="isActive !== index" @click="active(index)" class="item-list-btn">
+      <div v-if="!show[index]" @click="openMenu(index)" class="item-list-btn">
         <div>
           <span>アイテム一覧を表示</span>
           <img :src="arrowImage" class="arrow-img">
         </div>
         <span class="item-num">(商品数：{{post.items_num}})</span>
       </div>
+      <div v-if="show[index]" @click="openMenu(index)" class="item-list-btn">
+        <div>
+          <span>閉じる</span>
+        </div>
+      </div>
 
-      <div :class="{'is-active' : isActive === index}" class="item-list-switch">
+      <div v-if="show[index]" class="item-list-switch">
         <div v-for="(item, index) in post.items" :key="index" class="item-content">
           <div class="item-info">
             <img :src="item.image.thumb_mini.url" class="item-img">
@@ -52,7 +57,8 @@ export default {
       posts: [],
       youtuber: "",
       isActive: "",
-      arrowImage: arrow_image
+      arrowImage: arrow_image,
+      show: {},
     }
   },
   created () {
@@ -69,12 +75,8 @@ export default {
     });
   },
   methods: {  
-    active(i) {
-      if(this.isActive === i){
-        this.isActive = null;
-      }else{
-        this.isActive = i;
-      }
+    openMenu(key) {
+      this.$set(this.show, key, !this.show[key])
     }
   }
 }
@@ -150,6 +152,7 @@ export default {
     font-weight: 600;
     background-color: #ED7483;
     border-radius: 9999px;
+    margin-bottom: 15px;
     &:hover{
       opacity: .8;
     }
@@ -162,7 +165,12 @@ export default {
   }
 }
 .item-list-switch{
-  display: none;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  @media(max-width: 567px){
+    display: flex;
+    flex-direction: column;
+  }
   .item-content{
     display: flex;
     border: 1px solid #e7e7e7;
@@ -237,14 +245,6 @@ export default {
         }
       }
     }
-  }
-}
-.is-active{
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  @media(max-width: 567px){
-    display: flex;
-    flex-direction: column;
   }
 }
 </style>
