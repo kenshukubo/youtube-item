@@ -148,7 +148,7 @@ export default {
     min-height: 36px;
     cursor: pointer;
     font-weight: 600;
-    background-color: #02bb80;
+    background-color: #ED7483;
     border-radius: 9999px;
     &:hover{
       opacity: .8;
@@ -221,7 +221,7 @@ export default {
           color: #fff;
           cursor: pointer;
           text-align: center;
-          background-color: #02bb80;
+          background-color: #0BC7DB;
           padding: 10px;
           font-size: 15px;
           font-weight: bold;

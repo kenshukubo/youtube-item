@@ -108,12 +108,12 @@ export default {
 }
 .search-item:hover{
   color: #222;
-  border-bottom: 2px solid #02bb80;
+  border-bottom: 2px solid #ED7483;
   cursor: pointer;
 }
 .active{
   color: #222 !important;
-  border-bottom: 2px solid #02bb80 !important;
+  border-bottom: 2px solid #ED7483 !important;
 }
 .youtuber-wrapper{
   display: grid;

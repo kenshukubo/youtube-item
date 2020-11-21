@@ -74,7 +74,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .header-sidebar{
-  border-left: 3px solid #02bb80;
+  border-left: 3px solid #ED7483;
   color: #313131;
   font-size: 20px;
   font-weight: bold;
