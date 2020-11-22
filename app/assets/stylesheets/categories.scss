@@ -44,6 +44,7 @@
     }
     .item{
       display: flex;
+      align-items: center;
       margin-bottom: 20px;
       .item-img{
         width: 100px;
@@ -68,6 +69,13 @@
           border-radius: 100%;
           object-fit: cover;
           margin-right: 5px;
+        }
+        .channel-name{
+          font-size: 12px;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
         }
       }
       .item-name{
@@ -200,6 +208,13 @@
           border-radius: 100%;
           object-fit: cover;
           margin-right: 5px;
+        }
+        .channel-name{
+          font-size: 12px;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
         }
       }
       .item-name{
