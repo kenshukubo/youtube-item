@@ -7,8 +7,8 @@
           <%= image_tag post.thumbnail.url, class:"post-img"%>
           <h3 class="post-title"><%=post.title%></h3>
           <div class="youtuber-info">
-            <%=image_tag Youtuber.find(post.youtuber_id).image.url, class:"youtuber-img" %>
-            <span class="youtuber-name"><%= Youtuber.find(post.youtuber_id).name %></span>
+            <%=image_tag post.youtuber.image.url, class:"youtuber-img" %>
+            <span class="youtuber-name"><%= post.youtuber.name %></span>
           </div>
         <% end %>
       </li>
