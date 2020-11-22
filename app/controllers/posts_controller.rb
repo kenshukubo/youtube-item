@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.order(id: :desc).page(params[:page])
+    @posts = Post.all.includes(:youtuber).order(id: :desc).page(params[:page])
   end
 
   def new
