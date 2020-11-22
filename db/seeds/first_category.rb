@@ -34,6 +34,7 @@ Category.find_by(name: 'その他').children.create!(name: 'メイク雑貨・�
 Category.find_by(name: 'その他').children.create!(name: 'ネイル用品')
 Category.find_by(name: 'その他').children.create!(name: '香水')
 Category.find_by(name: 'その他').children.create!(name: 'サプリメント')
+Category.find_by(name: 'その他').children.create!(name: '日焼け止め・UVケア')
 
 category = Category.create(name: '動画ネタ')
 category.children.create!(name: 'モーニングルーティン', image: open("#{Rails.root}/db/2020post_category/sun.png"))
