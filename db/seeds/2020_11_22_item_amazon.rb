@@ -21,12 +21,12 @@ ids.each do |id|
   items.each do |item|
     name = item.title #商品名
     url = item.image_url #画像
-    file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
-    open(file, 'wb') do |pass|
-      open(url) do |recieve|
-        pass.write(recieve.read)
-      end
-    end
+    # file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
+    # open(file, 'wb') do |pass|
+    #   open(url) do |recieve|
+    #     pass.write(recieve.read)
+    #   end
+    # end
 
     price = ""
     if item.listings.present?
