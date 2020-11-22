@@ -2,8 +2,9 @@ json.posts do
   json.array!(@posts) do |post|
     json.title         post.title
     json.thumbnail_url post.thumbnail.thumb_mini.url
-    json.items         Item.where(id: ItemPost.where(post_id: post.id).pluck(:item_id))
-    json.items_num     ItemPost.where(post_id: post.id).count
+    # json.items         Item.where(id: ItemPost.where(post_id: post.id).pluck(:item_id))
+    json.items         post.items
+    json.items_num     post.item_posts.count
     json.video_id      post.video_id
   end
 end
