@@ -37,7 +37,6 @@ ItemPost.create!(post_id: 22, item: Item.find_by(item_number: 110)) if ItemPost.
 ItemPost.create!(post_id: 22, item: Item.find_by(item_number: 111)) if ItemPost.find_by(post_id: 22, item: Item.find_by(item_number: 111)).blank?
 ItemPost.create!(post_id: 22, item: Item.find_by(item_number: 112)) if ItemPost.find_by(post_id: 22, item: Item.find_by(item_number: 112)).blank?
 ItemPost.create!(post_id: 22, item: Item.find_by(item_number: 113)) if ItemPost.find_by(post_id: 22, item: Item.find_by(item_number: 113)).blank?
-ItemPost.create!(post_id: 22, item: Item.find_by(item_number: 114)) if ItemPost.find_by(post_id: 22, item: Item.find_by(item_number: 114)).blank?
 ItemPost.create!(post_id: 22, item: Item.find_by(item_number: 116)) if ItemPost.find_by(post_id: 22, item: Item.find_by(item_number: 116)).blank?
 ItemPost.create!(post_id: 23, item: Item.find_by(item_number: 119)) if ItemPost.find_by(post_id: 23, item: Item.find_by(item_number: 119)).blank?
 ItemPost.create!(post_id: 23, item: Item.find_by(item_number: 120)) if ItemPost.find_by(post_id: 23, item: Item.find_by(item_number: 120)).blank?

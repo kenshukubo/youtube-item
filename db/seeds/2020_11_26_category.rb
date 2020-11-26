@@ -39,7 +39,6 @@ PostItemCategory.create!(item: Item.find_by(item_number: 110), category: Categor
 PostItemCategory.create!(item: Item.find_by(item_number: 111), category: Category.find_by(name: '口紅・グロス・リップライナー')) if PostItemCategory.find_by(item: Item.find_by(item_number: 111)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 112), category: Category.find_by(name: 'メイク雑貨・小物')) if PostItemCategory.find_by(item: Item.find_by(item_number: 112)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 113), category: Category.find_by(name: 'メイク雑貨・小物')) if PostItemCategory.find_by(item: Item.find_by(item_number: 113)).blank?
-PostItemCategory.create!(item: Item.find_by(item_number: 114), category: Category.find_by(name: 'メイク雑貨・小物')) if PostItemCategory.find_by(item: Item.find_by(item_number: 114)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 116), category: Category.find_by(name: 'メイク雑貨・小物')) if PostItemCategory.find_by(item: Item.find_by(item_number: 116)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 119), category: Category.find_by(name: 'アイブロウ')) if PostItemCategory.find_by(item: Item.find_by(item_number: 119)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 120), category: Category.find_by(name: 'ハイライト')) if PostItemCategory.find_by(item: Item.find_by(item_number: 120)).blank?
