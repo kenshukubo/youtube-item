@@ -49,12 +49,12 @@ PostItemCategory.create!(item: Item.find_by(item_number: 125), category: Categor
 PostItemCategory.create!(item: Item.find_by(item_number: 126), category: Category.find_by(name: 'アイブロウ')) if PostItemCategory.find_by(item: Item.find_by(item_number: 126)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 127), category: Category.find_by(name: 'アイシャドウ')) if PostItemCategory.find_by(item: Item.find_by(item_number: 127)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 128), category: Category.find_by(name: 'チーク')) if PostItemCategory.find_by(item: Item.find_by(item_number: 128)).blank?
-PostItemCategory.create!(item: Item.find_by(item_number: 129), category: Category.find_by(name: 'シェーディング')) if PostItemCategory.find_by(item: Item.find_by(item_number: 129)).blank?
+PostItemCategory.create!(item: Item.find_by(item_number: 129), category: Category.find_by(name: 'シェーダー')) if PostItemCategory.find_by(item: Item.find_by(item_number: 129)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 131), category: Category.find_by(name: 'リップクリーム・リップケア')) if PostItemCategory.find_by(item: Item.find_by(item_number: 131)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 132), category: Category.find_by(name: '化粧下地')) if PostItemCategory.find_by(item: Item.find_by(item_number: 132)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 134), category: Category.find_by(name: 'コンシーラー')) if PostItemCategory.find_by(item: Item.find_by(item_number: 134)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 135), category: Category.find_by(name: 'チーク')) if PostItemCategory.find_by(item: Item.find_by(item_number: 135)).blank?
-PostItemCategory.create!(item: Item.find_by(item_number: 136), category: Category.find_by(name: 'シェーディング')) if PostItemCategory.find_by(item: Item.find_by(item_number: 136)).blank?
+PostItemCategory.create!(item: Item.find_by(item_number: 136), category: Category.find_by(name: 'シェーダー')) if PostItemCategory.find_by(item: Item.find_by(item_number: 136)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 138), category: Category.find_by(name: 'アイブロウ')) if PostItemCategory.find_by(item: Item.find_by(item_number: 138)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 139), category: Category.find_by(name: 'アイブロウ')) if PostItemCategory.find_by(item: Item.find_by(item_number: 139)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 140), category: Category.find_by(name: 'チーク')) if PostItemCategory.find_by(item: Item.find_by(item_number: 140)).blank?
