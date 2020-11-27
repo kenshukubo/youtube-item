@@ -1,5 +1,5 @@
 <div id="new-post">
-  <h2 class="new-post-title">新着アイテム<span class="update-date">更新日<%= @recentry_update_date %></span></h2>
+  <h2 class="new-post-title">新着アイテム紹介動画<span class="update-date">更新日<%= @recentry_update_date %></span></h2>
   <ul class="posts-wrapper">
     <% @posts.find_each do |post| %>
       <li>
@@ -15,6 +15,6 @@
     <% end %>
   </ul>
   <%=link_to posts_path, class:"post-index-btn" do %>
-    新着アイテム一覧へ
+    新着アイテム紹介動画一覧へ
   <% end %>
 </div>
