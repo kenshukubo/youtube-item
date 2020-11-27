@@ -47,10 +47,13 @@
           align-items: center;
           justify-content: center;
           z-index: 1;
-          color: #333;
-          font-size: 16px;
-          font-weight: 800;
-          text-shadow: 0 0 4px #fff;
+          background: rgba(231,231,231, 0.6);
+          .item-unreleased-text{
+            font-size: 16px;
+            font-weight: 800;
+            color: #333;
+            text-shadow: 0 0 4px #fff;
+          }
         }
         .post-img{
           height: 120px;
