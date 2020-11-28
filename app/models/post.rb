@@ -7,10 +7,10 @@ class Post < ApplicationRecord
 
   mount_uploader :thumbnail, ThumbnailUploader
 
-  validates :title, presence: true
-  #validates :thumbnail, presence: true
+  validates :title, presence: true, uniqueness: true
+  validates :thumbnail, presence: true
   validates :youtuber_id, presence: true
-  validates :video_id, presence: true
+  validates :video_id, presence: true, uniqueness: true
 
   def self.search(search)
     return Post.all unless search

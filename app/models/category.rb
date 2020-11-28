@@ -4,7 +4,7 @@ class Category < ApplicationRecord
   has_many :items, through: :post_item_categories
   has_many :posts, through: :post_item_categories
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   mount_uploader :image, CategoryImageUploader
 
