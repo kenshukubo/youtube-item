@@ -13,7 +13,7 @@
       </div>
       
       <ul class="item-content-wrapper">
-        <%=@items.find_each do |item| %>
+        <% @items.each do |item| %>
           <li class="item-content">
             <div class="item-info">
               <%=image_tag item.image.thumb_mini.url, class:"item-img" %>

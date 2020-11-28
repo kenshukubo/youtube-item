@@ -7,7 +7,7 @@
     <span>Youtuberで選ぶ</span>
   </p>
   <ul class="youtuber-wrapper-for-pc">
-    <% @youtubers.find_each do |youtuber| %>
+    <% @youtubers.each do |youtuber| %>
       <li class="youtuber-content">
         <% if ItemPost.find_by(post: Post.includes(:youtuber).where(youtuber: youtuber)).blank? %>
           <div class="item-unreleased">
@@ -25,7 +25,7 @@
   </ul>
 
   <ul class="youtuber-wrapper-for-sp">
-    <% @youtubers.find_each do |youtuber| %>
+    <% @youtubers.each do |youtuber| %>
       <li class="youtuber-content">
         <% if ItemPost.find_by(post: Post.includes(:youtuber).where(youtuber: youtuber)).blank? %>
           <div class="item-unreleased">

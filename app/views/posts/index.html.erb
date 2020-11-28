@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="new-post-title">新着アイテム一覧</h2>
     <ul class="posts-wrapper">
-      <% @posts.find_each do |post| %>
+      <% @posts.each do |post| %>
         <li>
           <%= link_to post_path(post.id), class:"post-info" do %>
             <div class="post-img-wrapper">

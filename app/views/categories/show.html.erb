@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="category-title"><%= @category.name %></h2>
     <ul class="category-wrapper">
-      <%= @categories.find_each do |category| %>
+      <% @categories.each do |category| %>
         <%= link_to category_path(category.id) do %>
           <li class="category">
             <p class="category-child-title"><%=category.name%></p>
@@ -15,7 +15,7 @@
         
         <% if @items.present? %>
           <ul class="item-wrapper-for-pc">
-            <%= @items.find_each do |item| %>
+            <% @items.each do |item| %>
               <li class="item">
                 <%= image_tag item.image.url, class:"item-img" %>
                 <div>
@@ -48,7 +48,7 @@
           </ul>
         <% else %>
           <ul class="post-wrapper-for-pc">
-            <%= @posts.find_each do |post| %>
+            <% @posts.each do |post| %>
               <li>
                 <%= link_to youtuber_path(post.youtuber_id), class:"post-info" do %>
                   <%= image_tag post.thumbnail.url, class:"post-img"%>
@@ -65,15 +65,15 @@
         
         <% if @items.present? %>
           <ul class="item-wrapper-for-sp">
-            <%= @items.find_each do |item| %>
+            <% @items.each do |item| %>
               <li class="item">
                 <%= image_tag item.image.url, class:"item-img" %>
                 <div>
                   
-                  <%= item.item_posts.find_each do |item_post| %>
-                    <%=link_to youtuber_path(item_post.post.youtuber_id), class:"youtuber-info" do %>
-                      <%=image_tag item_post.post.youtuber.image.url, class:"channel-icon" %>
-                      <p class="channel-name"><%= item_post.post.youtuber.name %></p>
+                  <% if item.posts.present? %>
+                    <%=link_to youtuber_path(item.posts.first.id), class:"youtuber-info" do %>
+                      <%=image_tag item.posts.first.youtuber.image.url, class:"channel-icon" %>
+                      <p class="channel-name"><%= item.posts.first.youtuber.name %></p>
                     <% end %>
                   <% end %>
 
@@ -83,11 +83,10 @@
                     <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank %>
                   <% end %>
 
-                  <% item_category = PostItemCategory.find_by(item: item) %>
-                  <% if item_category.present? %>
-                    <%= link_to category_path(item_category.category_id), class:"item-category" do %>
+                  <% if item.categories.present? %>
+                    <%= link_to category_path(item.categories.first.id), class:"item-category" do %>
                       <span class="category-child-title">
-                        <%= item_category.category.name %>
+                        <%= item.categories.first.name %>
                       </span>
                     <% end %>
                   <% end %>
@@ -99,7 +98,7 @@
           </ul>
         <% else %>
           <ul class="post-wrapper-for-sp">
-            <%= @posts.find_each do |post| %>
+            <% @posts.each do |post| %>
               <li>
                 <%= link_to youtuber_path(post.youtuber_id), class:"post-info" do %>
                   <%= image_tag post.thumbnail.url, class:"post-img"%>
