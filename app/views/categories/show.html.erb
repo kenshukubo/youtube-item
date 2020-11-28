@@ -28,9 +28,9 @@
                   <% end %>
 
                   <% if item.amazon_url %>
-                    <%=link_to item.name, item.amazon_url, class:"item-name", target: :_blank %>
+                    <%=link_to item.name, item.amazon_url, class:"item-name", target: :_blank, rel: "noopener" %>
                   <% else %>
-                    <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank %>
+                    <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank, rel: "noopener" %>
                   <% end %>
 
                   <% item_category = PostItemCategory.find_by(item: item) %>
