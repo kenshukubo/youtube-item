@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.includes(:youtuber).order(id: :desc).page(params[:page])
+    @posts = Post.eager_load(:youtuber).order(id: :desc).page(params[:page])
   end
 
   def new
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @items = Item.joins(:item_posts).where(item_posts: {post_id: @post.id})
+    @items = Item.eager_load(:item_posts).where(item_posts: {post_id: @post.id})
   end
 
   private

@@ -20,10 +20,10 @@
                 <%= image_tag item.image.url, class:"item-img" %>
                 <div>
                   
-                  <%= item.item_posts.find_each do |item_post| %>
-                    <%=link_to post_path(item_post.post_id), class:"youtuber-info" do %>
-                      <%=image_tag item_post.post.youtuber.image.url, class:"channel-icon" %>
-                      <p class="channel-name"><%= item_post.post.youtuber.name %></p>
+                  <% if item.posts.present? %>
+                    <%=link_to post_path(item.posts.first.id), class:"youtuber-info" do %>
+                      <%=image_tag item.posts.first.youtuber.image.url, class:"channel-icon" %>
+                      <p class="channel-name"><%= item.posts.first.youtuber.name %></p>
                     <% end %>
                   <% end %>
 
@@ -33,11 +33,10 @@
                     <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank, rel: "noopener" %>
                   <% end %>
 
-                  <% item_category = PostItemCategory.find_by(item: item) %>
-                  <% if item_category.present? %>
-                    <%= link_to category_path(item_category.category_id), class:"item-category" do %>
+                  <% if item.categories.present? %>
+                    <%= link_to category_path(item.categories.first.id), class:"item-category" do %>
                       <span class="category-child-title">
-                        <%= item_category.category.name %>
+                        <%= item.categories.first.name %>
                       </span>
                     <% end %>
                   <% end %>
