@@ -21,7 +21,7 @@
                 <div>
                   
                   <%= item.item_posts.find_each do |item_post| %>
-                    <%=link_to youtuber_path(item_post.post.youtuber_id), class:"youtuber-info" do %>
+                    <%=link_to post_path(item_post.post_id), class:"youtuber-info" do %>
                       <%=image_tag item_post.post.youtuber.image.url, class:"channel-icon" %>
                       <p class="channel-name"><%= item_post.post.youtuber.name %></p>
                     <% end %>
