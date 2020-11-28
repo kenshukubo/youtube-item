@@ -178,6 +178,7 @@ export default {
   }
   .category-list{
     font-size: 16px;
+    margin-bottom: 20px;
     .category-name{
       -webkit-box-orient: vertical;
       display: -webkit-box;
@@ -204,7 +205,7 @@ export default {
       padding-left: 20px;
       .third-category{
         display: block;
-        padding: 8px 0;
+        padding: 12px 0;
       }
     }
     .post-category{
