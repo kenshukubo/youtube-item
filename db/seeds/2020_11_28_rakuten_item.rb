@@ -103,20 +103,20 @@ ids.each do |id|
     url = item["mediumImageUrls"][0]
 
     ##### 本番用 #####
-    # file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
-    # open(file, 'wb') do |pass|
-    #   open(url) do |recieve|
-    #     pass.write(recieve.read)
-    #   end
-    # end
-
-    ##### テスト用 #####
-    file = "#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png"
+    file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
     open(file, 'wb') do |pass|
       open(url) do |recieve|
         pass.write(recieve.read)
       end
     end
+
+    ##### テスト用 #####
+    # file = "#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png"
+    # open(file, 'wb') do |pass|
+    #   open(url) do |recieve|
+    #     pass.write(recieve.read)
+    #   end
+    # end
 
     if id[2].present?
       name = id[2]
@@ -135,8 +135,8 @@ ids.each do |id|
     Item.create!(
       name: name,
       item_number: id[1],
-      # image: open("#{Rails.root}/db/2020amazon_item/#{id[1]}.png"), ##### 本番用 #####
-      image: open("#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png"), ##### テスト用 #####
+      image: open("#{Rails.root}/db/2020amazon_item/#{id[1]}.png"), ##### 本番用 #####
+      #image: open("#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png"), ##### テスト用 #####
       price: price,
       amazon_url: id[4],
       asin: asin,
