@@ -3,7 +3,12 @@
     <h2 class="youtuber-list-title">Youtuber一覧</h2>
     <ul class="youtuber-wrapper-for-pc">
       <% @youtubers.find_each do |youtuber| %>
-        <li>
+        <li class="youtuber-content">
+          <% if ItemPost.find_by(post: Post.includes(:youtuber).where(youtuber: youtuber)).blank? %>
+            <div class="item-unreleased">
+              <p class="item-unreleased-text">アイテム未公開</p>
+            </div>
+          <% end %>
           <%= link_to youtuber_path(youtuber.id), class:"youtuber-info" do %>
             <%= image_tag youtuber.image.url, class:"channel-img"%>
             <div>
@@ -15,7 +20,12 @@
     </ul>
     <ul class="youtuber-wrapper-for-sp">
       <% @youtubers.find_each do |youtuber| %>
-        <li>
+        <li class="youtuber-content">
+          <% if ItemPost.find_by(post: Post.includes(:youtuber).where(youtuber: youtuber)).blank? %>
+            <div class="item-unreleased">
+              <p class="item-unreleased-text">アイテム未公開</p>
+            </div>
+          <% end %>
           <%= link_to youtuber_path(youtuber.id), class:"youtuber-info" do %>
             <%= image_tag youtuber.image.url, class:"channel-img"%>
             <div class="youtube-name-wrapper">
