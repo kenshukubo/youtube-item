@@ -3,7 +3,7 @@
   <ul class="posts-wrapper">
     <% @posts.find_each do |post| %>
       <li>
-        <%= link_to youtuber_path(post.youtuber_id), class:"post-info" do %>
+        <%= link_to post_path(post.id), class:"post-info" do %>
           <div class="post-img-wrapper">
             <% if post.item_posts.blank? %>
               <div class="item-unreleased">

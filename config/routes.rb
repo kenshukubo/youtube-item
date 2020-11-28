@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/privacy_policy",  to: "static_pages#privacy_policy"
   get "/administrator",  to: "static_pages#administrator"
 
-  resources :posts, only: [:index, :new, :create, :destroy]
+  resources :posts, only: [:index, :new, :create, :destroy, :show]
   resources :youtubers, only: [:index, :new, :create, :show, :destroy]
   resources :items, only: [:new, :create, :destroy]
   resources :categories, only: [:show]

@@ -1,0 +1,34 @@
+<div id="post-show">
+  <div class="container">
+    <div class="column-main">
+      <div class="post-info">
+        <%=image_tag @post.thumbnail.url, class:"post-img" %>
+        <div>
+          <h2 class="post-title"><%= @post.title %></h2>
+          <%=link_to youtuber_path(@post.youtuber.id), class:"youtuber-info" do %>
+            <%=image_tag @post.youtuber.image.url, class:"youtuber-img" %>
+            <p class="youtuber-name"><%= @post.youtuber.name %></p>
+          <% end %>
+        </div>
+      </div>
+      
+      <ul class="item-content-wrapper">
+        <%=@items.find_each do |item| %>
+          <li class="item-content">
+            <div class="item-info">
+              <%=image_tag item.image.thumb_mini.url, class:"item-img" %>
+              <div>
+                <p class="item-name"><%= item.name %></p>
+                <p class="item-price"><%= item.price %>円<span class="tax-include">(税込)</span></p>
+                <ul class="item-btn-wrapper">
+                  <li><a :href="item.rakuten_url" class="item-link" target="_blank" rel="noopener">楽天で詳細をみる</a></li>
+                  <li><a :href="item.amazon_url" class="item-link" target="_blank" rel="noopener">Amazonで詳細をみる</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

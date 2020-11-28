@@ -79,3 +79,123 @@
     }
   }
 }
+
+#post-show{
+  .post-info{
+    display: flex;
+    margin-bottom: 40px;
+    .post-img{
+      width: 240px;
+      margin-right: 20px;
+    }
+  }
+  .post-title{
+    font-size: 32px;
+    margin-bottom: 8px;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .youtuber-info{
+    display: flex;
+    align-items: center;
+    &:hover{
+      text-decoration: underline;
+      .youtuber-img{
+        opacity: .4;
+      }
+    }
+    .youtuber-img{
+      width: 48px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .youtuber-name{
+      font-size: 24px;
+    }
+  }
+  .item-content-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    @media(max-width: 567px){
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .item-content{
+    display: flex;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    @media(max-width: 567px){
+      padding: 15px;
+    }
+    .item-info{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media(max-width: 567px){
+        flex-direction: row;
+      }
+      .item-img{
+        max-width: 160px;
+        max-height: 160px;
+        margin-bottom: 10px;
+        @media(max-width: 567px){
+          width: 120px;
+          height: 120px;
+          margin-right: 10px;
+        }
+      }
+      .item-name{
+        margin-bottom: 5px;
+        font-size: 18px;
+        line-height: 1.2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .item-price{
+        color: #fd381e;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: -.03em;
+        line-height: 24px;
+        margin-bottom: 12px;
+      }
+      .tax-include{
+        font-size: 12px !important;
+      }
+      .item-btn-wrapper{
+        width: 100%;
+        li{
+          margin-top: 10px;
+        }
+        .item-link{
+          box-sizing: border-box;
+          border-radius: 3px;
+          color: #fff;
+          cursor: pointer;
+          text-align: center;
+          background-color: #0BC7DB;
+          padding: 10px;
+          font-size: 15px;
+          font-weight: bold;
+          line-height: 1.5;
+          box-shadow: 0 -4px 0 rgba(0,0,0,0.1) inset;
+          display: block !important;
+          @media(max-width: 567px){
+            font-size: 11px;
+          }
+        }
+        .item-link:hover{
+          opacity: .8;
+        }
+      }
+    }
+  }
+}

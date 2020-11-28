@@ -18,6 +18,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @items = Item.joins(:item_posts).where(item_posts: {post_id: @post.id})
+  end
+
   private
     def post_params
       params.require(:post).permit(:title, :thumbnail, :category, :youtuber_id)
