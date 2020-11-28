@@ -28,8 +28,8 @@
         </div>
       </div>
 
-      <div v-if="show[index]" class="item-list-switch">
-        <div v-for="(item, index) in post.items" :key="index" class="item-content">
+      <ul v-if="show[index]" class="item-list-switch">
+        <li v-for="(item, index) in post.items" :key="index" class="item-content">
           <div class="item-info">
             <img :src="item.image.thumb_mini.url" class="item-img">
             <div>
@@ -41,8 +41,8 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
