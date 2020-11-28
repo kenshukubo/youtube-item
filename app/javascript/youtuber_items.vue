@@ -180,6 +180,7 @@ export default {
     box-sizing: border-box;
     @media(max-width: 567px){
       padding: 15px;
+      height: 200px;
     }
     .item-info{
       display: flex;
@@ -206,6 +207,11 @@ export default {
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
+        @media(max-width: 567px){
+          height: 42px;
+          font-size: 16px;
+          overflow: scroll;
+        }
       }
       .item-price{
         color: #fd381e;
@@ -214,6 +220,9 @@ export default {
         letter-spacing: -.03em;
         line-height: 24px;
         margin-bottom: 12px;
+        @media(max-width: 567px){
+          font-size: 12px;
+        }
       }
       .tax-include{
         font-size: 12px !important;
@@ -237,7 +246,7 @@ export default {
           box-shadow: 0 -4px 0 rgba(0,0,0,0.1) inset;
           display: block !important;
           @media(max-width: 567px){
-            font-size: 11px;
+            font-size: 12px;
           }
         }
         .item-link:hover{
