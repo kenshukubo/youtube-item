@@ -25,7 +25,7 @@
 
     <div v-if="searchPost">
       <ul class="posts-wrapper">
-        <a v-for="(post, index) in posts" :key="index" :href="`/youtubers/${post.youtuber_id}`">
+        <a v-for="(post, index) in posts" :key="index" :href="`/posts/${post.id}`">
           <li class="post-info">
             <img :src="post.thumbnail.url" class="post-img">
             <h3 class="post-title">{{post.title}}</h3>
@@ -212,6 +212,7 @@ export default {
     .item-img{
       width: 100px;
       height: 100px;
+      margin-right: 10px;
     }
     .youtuber-info{
       display: flex;
