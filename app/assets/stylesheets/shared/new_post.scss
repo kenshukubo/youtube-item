@@ -1,13 +1,15 @@
 #new-post{
   .new-post-title{
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
     letter-spacing: 0.8px;
     border-left: 3px solid #ED7483;
     padding-left: 16px;
     .update-date{
       color: #999;
-      font-size: 11px;
-      margin-left: 6px;
+      font-size: 14px;
+      margin-left: 12px;
     }
     @media(max-width: 567px){
       font-size: 20px;
