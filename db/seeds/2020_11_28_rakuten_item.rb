@@ -90,14 +90,14 @@ ids.each do |id|
     name = item.name
     price = item.price
     rakuten_url = item.affiliate_url
-    url = item["mediumImageUrls"][0]
+    # url = item["mediumImageUrls"][0]
 
-    file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
-    open(file, 'wb') do |pass|
-      open(url) do |recieve|
-        pass.write(recieve.read)
-      end
-    end
+    # file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
+    # open(file, 'wb') do |pass|
+    #   open(url) do |recieve|
+    #     pass.write(recieve.read)
+    #   end
+    # end
 
     if id[2].present?
       name = id[2]
