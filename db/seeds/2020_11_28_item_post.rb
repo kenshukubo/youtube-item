@@ -99,6 +99,7 @@ ItemPost.create!(post_id: 34, item: Item.find_by(item_number: 243)) if Item.find
 ItemPost.create!(post_id: 34, item: Item.find_by(item_number: 244)) if Item.find_by(item_number: 244).present? && ItemPost.find_by(post_id: 34, item: Item.find_by(item_number: 244)).blank?
 ItemPost.create!(post_id: 34, item: Item.find_by(item_number: 245)) if Item.find_by(item_number: 245).present? && ItemPost.find_by(post_id: 34, item: Item.find_by(item_number: 245)).blank?
 
+Category.find_by(name: 'その他').children.create!(name: 'ボディクリーム')
 
 PostItemCategory.create!(item: Item.find_by(item_number: 157), category: Category.find_by(name: '化粧下地')) if Item.find_by(item_number: 157).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 157)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 158), category: Category.find_by(name: 'ファンデーション')) if Item.find_by(item_number: 158).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 158)).blank?
@@ -125,9 +126,7 @@ PostItemCategory.create!(item: Item.find_by(item_number: 178), category: Categor
 PostItemCategory.create!(item: Item.find_by(item_number: 179), category: Category.find_by(name: '化粧下地')) if Item.find_by(item_number: 179).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 179)).blank?
 
 PostItemCategory.create!(item: Item.find_by(item_number: 180), category: Category.find_by(name: 'ファンデーション')) if Item.find_by(item_number: 180).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 180)).blank?
-
-PostItemCategory.create!(item: Item.find_by(item_number: 181), category: Category.find_by(name: '')) if Item.find_by(item_number: 181).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 181)).blank?
-
+PostItemCategory.create!(item: Item.find_by(item_number: 181), category: Category.find_by(name: 'アイブロウ')) if Item.find_by(item_number: 181).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 181)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 182), category: Category.find_by(name: 'ハイライト')) if Item.find_by(item_number: 182).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 182)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 183), category: Category.find_by(name: 'アイブロウ')) if Item.find_by(item_number: 183).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 183)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 184), category: Category.find_by(name: 'アイシャドウ')) if Item.find_by(item_number: 184).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 184)).blank?
@@ -173,16 +172,16 @@ PostItemCategory.create!(item: Item.find_by(item_number: 218), category: Categor
 PostItemCategory.create!(item: Item.find_by(item_number: 219), category: Category.find_by(name: '口紅・グロス・リップライナー')) if Item.find_by(item_number: 219).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 219)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 220), category: Category.find_by(name: '口紅・グロス・リップライナー')) if Item.find_by(item_number: 220).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 220)).blank?
 
-PostItemCategory.create!(item: Item.find_by(item_number: 221), category: Category.find_by(name: 'チーク・アイシャドウ')) if Item.find_by(item_number: 221).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 221)).blank?
-PostItemCategory.create!(item: Item.find_by(item_number: 222), category: Category.find_by(name: 'チーク・アイシャドウ')) if Item.find_by(item_number: 222).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 222)).blank?
-PostItemCategory.create!(item: Item.find_by(item_number: 223), category: Category.find_by(name: 'チーク・アイシャドウ')) if Item.find_by(item_number: 223).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 223)).blank?
+PostItemCategory.create!(item: Item.find_by(item_number: 221), category: Category.find_by(name: 'チーク')) if Item.find_by(item_number: 221).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 221)).blank?
+PostItemCategory.create!(item: Item.find_by(item_number: 222), category: Category.find_by(name: 'チーク')) if Item.find_by(item_number: 222).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 222)).blank?
+PostItemCategory.create!(item: Item.find_by(item_number: 223), category: Category.find_by(name: 'チーク')) if Item.find_by(item_number: 223).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 223)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 224), category: Category.find_by(name: '口紅・グロス・リップライナー')) if Item.find_by(item_number: 224).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 224)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 225), category: Category.find_by(name: '洗顔料')) if Item.find_by(item_number: 225).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 225)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 226), category: Category.find_by(name: '日焼け止め・UVケア')) if Item.find_by(item_number: 226).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 226)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 227), category: Category.find_by(name: '美容液')) if Item.find_by(item_number: 227).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 227)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 228), category: Category.find_by(name: 'その他')) if Item.find_by(item_number: 228).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 228)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 229), category: Category.find_by(name: 'その他')) if Item.find_by(item_number: 229).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 229)).blank?
-PostItemCategory.create!(item: Item.find_by(item_number: 230), category: Category.find_by(name: 'その他')) if Item.find_by(item_number: 230).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 230)).blank?
+PostItemCategory.create!(item: Item.find_by(item_number: 230), category: Category.find_by(name: 'ハンドクリーム')) if Item.find_by(item_number: 230).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 230)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 231), category: Category.find_by(name: 'クレンジング')) if Item.find_by(item_number: 231).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 231)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 232), category: Category.find_by(name: 'その他')) if Item.find_by(item_number: 232).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 232)).blank?
 PostItemCategory.create!(item: Item.find_by(item_number: 233), category: Category.find_by(name: '日焼け止め・UVケア')) if Item.find_by(item_number: 233).present? && PostItemCategory.find_by(item: Item.find_by(item_number: 233)).blank?
