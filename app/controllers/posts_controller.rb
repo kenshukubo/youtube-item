@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.eager_load(:youtuber).order(id: :desc).page(params[:page])
+    @posts = Post.eager_load(:youtuber, :item_posts).where.not(item_posts: {item_id: nil}).order(id: :desc).page(params[:page])
   end
 
   def new
