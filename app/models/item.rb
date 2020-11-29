@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-  has_many :post_item_categories, dependent: :destroy
-  has_many :categories, through: :post_item_categories
+  has_one :post_item_category, dependent: :destroy
+  has_one :category, through: :post_item_category
   has_many :item_posts, dependent: :destroy
   has_many :posts, through: :item_posts
 

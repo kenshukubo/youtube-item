@@ -33,12 +33,8 @@
                     <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank, rel: "noopener" %>
                   <% end %>
 
-                  <% if item.categories.present? %>
-                    <%= link_to category_path(item.categories.first.id), class:"item-category" do %>
-                      <span class="category-child-title">
-                        <%= item.categories.first.name %>
-                      </span>
-                    <% end %>
+                  <% if item.category.present? %>
+                    <%= link_to item.category.name, category_path(item.category.id), class:"item-category" %>
                   <% end %>
                   
                   <span class="item-price"><%= item.price %>円(税込)</span>
@@ -83,12 +79,8 @@
                     <%=link_to item.name, item.rakuten_url, class:"item-name", target: :_blank %>
                   <% end %>
 
-                  <% if item.categories.present? %>
-                    <%= link_to category_path(item.categories.first.id), class:"item-category" do %>
-                      <span class="category-child-title">
-                        <%= item.categories.first.name %>
-                      </span>
-                    <% end %>
+                  <% if item.category.present? %>
+                    <%= link_to item.category.name, category_path(item.category.id), class:"item-category" %>
                   <% end %>
 
                   <span class="item-price"><%= item.price %>円(税込)</span>
