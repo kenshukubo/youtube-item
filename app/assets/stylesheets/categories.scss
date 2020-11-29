@@ -12,7 +12,8 @@
   .category-wrapper{
     display: flex;
     background: #F5F5F5;
-    padding: 16px 0;
+    padding: 12px 5px;
+    border-radius: 16px;
     overflow: auto;
     white-space: nowrap;
     margin-bottom: 60px;
@@ -221,6 +222,12 @@
         -webkit-line-clamp: 2;
         overflow: hidden;
         margin-bottom: 4px;
+        @media(max-width: 567px){
+          height: 42px;
+          font-size: 16px;
+          display: block;
+          overflow: scroll;
+        }
       }
       .item-category{
         display: flex;
@@ -243,5 +250,8 @@
         font-weight: bold;
       }
     }
+  }
+  .pagination-wrapper{
+    margin-top: 20px;
   }
 }

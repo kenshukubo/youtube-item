@@ -210,6 +210,7 @@ export default {
         @media(max-width: 567px){
           height: 42px;
           font-size: 16px;
+          display: block;
           overflow: scroll;
         }
       }
