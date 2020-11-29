@@ -9,11 +9,13 @@
   <ul class="youtuber-wrapper-for-pc">
     <% @youtubers.each do |youtuber| %>
       <li class="youtuber-content">
+      <!--
         <% if ItemPost.find_by(post: Post.includes(:youtuber).where(youtuber: youtuber)).blank? %>
           <div class="item-unreleased">
             <p class="item-unreleased-text">アイテム未公開</p>
           </div>
         <% end %>
+        -->
         <%= link_to youtuber_path(youtuber.id), class:"youtuber-info" do %>
           <%= image_tag youtuber.image.url, class:"channel-img"%>
           <div>
@@ -27,11 +29,6 @@
   <ul class="youtuber-wrapper-for-sp">
     <% @youtubers.each do |youtuber| %>
       <li class="youtuber-content">
-        <% if ItemPost.find_by(post: Post.includes(:youtuber).where(youtuber: youtuber)).blank? %>
-          <div class="item-unreleased">
-            <p class="item-unreleased-text">アイテム未公開</p>
-          </div>
-        <% end %>
         <%= link_to youtuber_path(youtuber.id), class:"youtuber-info" do %>
           <%= image_tag youtuber.image.url, class:"channel-img"%>
           <div class="youtube-name-wrapper">
