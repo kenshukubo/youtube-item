@@ -295,52 +295,54 @@ ids = [
 
 ids.each do |id|
   items = RakutenWebService::Ichiba::Item.search(itemCode: id[0])
-  items.each do |item|
-    name = item.name
-    price = item.price
-    rakuten_url = item.affiliate_url
-    url = item["mediumImageUrls"][0]
+  if items.present?
+    items.each do |item|
+      name = item.name
+      price = item.price
+      rakuten_url = item.affiliate_url
+      url = item["mediumImageUrls"][0]
 
-    ##### 本番用 #####
-    # file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
-    # open(file, 'wb') do |pass|
-    #   open(url) do |recieve|
-    #     pass.write(recieve.read)
-    #   end
-    # end
+      ##### 本番用 #####
+      # file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
+      # open(file, 'wb') do |pass|
+      #   open(url) do |recieve|
+      #     pass.write(recieve.read)
+      #   end
+      # end
 
-    ##### テスト用 #####
-    file = "#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png"
-    open(file, 'wb') do |pass|
-      open(url) do |recieve|
-        pass.write(recieve.read)
+      ##### テスト用 #####
+      # file = "#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png"
+      # open(file, 'wb') do |pass|
+      #   open(url) do |recieve|
+      #     pass.write(recieve.read)
+      #   end
+      # end
+
+      if id[2].present?
+        name = id[2]
       end
-    end
 
-    if id[2].present?
-      name = id[2]
-    end
+      if id[3].present?
+        price = id[3]
+      end
 
-    if id[3].present?
-      price = id[3]
-    end
+      if id[5].present?
+        asin = id[5]
+      else
+        asin = nil
+      end
 
-    if id[5].present?
-      asin = id[5]
-    else
-      asin = nil
+      Item.create!(
+        name: name,
+        item_number: id[1],
+        image: open("#{Rails.root}/db/2020amazon_item/#{id[1]}.png"), ##### 本番用 #####
+        #image: open("#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png"), ##### テスト用 #####
+        price: price,
+        amazon_url: id[4],
+        asin: asin,
+        rakuten_url: rakuten_url,
+        url: id[0]
+      ) if Item.find_by(item_number: id[1]).blank?
     end
-
-    Item.create!(
-      name: name,
-      item_number: id[1],
-      #image: open("#{Rails.root}/db/2020amazon_item/#{id[1]}.png"), ##### 本番用 #####
-      image: open("#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png"), ##### テスト用 #####
-      price: price,
-      amazon_url: id[4],
-      asin: asin,
-      rakuten_url: rakuten_url,
-      url: id[0]
-    ) if Item.find_by(item_number: id[1]).blank?
   end
 end
