@@ -342,7 +342,7 @@ ids.each do |id|
         asin: asin,
         rakuten_url: rakuten_url,
         url: id[0]
-      ) if Item.find_by(item_number: id[1]).blank?
+      ) if Item.find_by(item_number: id[1]).blank? && open("#{Rails.root}/db/2020amazon_item/#{id[1]}.png").present?
     end
   end
 end
