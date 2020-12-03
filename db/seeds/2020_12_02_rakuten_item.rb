@@ -300,9 +300,9 @@ ids.each do |id|
       name = item.name
       price = item.price
       rakuten_url = item.affiliate_url
-      url = item["mediumImageUrls"][0]
 
       ##### 本番用 #####
+      # url = item["mediumImageUrls"][0]
       # file = "#{Rails.root}/db/2020amazon_item/#{id[1]}.png"
       # open(file, 'wb') do |pass|
       #   open(url) do |recieve|
@@ -311,6 +311,7 @@ ids.each do |id|
       # end
 
       ##### テスト用 #####
+      # url = item["mediumImageUrls"][0]
       # file = "#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png"
       # open(file, 'wb') do |pass|
       #   open(url) do |recieve|
@@ -332,7 +333,7 @@ ids.each do |id|
         asin = nil
       end
 
-      if Item.find_by(item_number: id[1]).blank? && open("#{Rails.root}/db/2020amazon_item/#{id[1]}.png").present?
+      if Item.find_by(item_number: id[1]).blank? && File.exist?("#{Rails.root}/db/2020amazon_item/#{id[1]}.png")
         Item.create!(
           name: name,
           item_number: id[1],
