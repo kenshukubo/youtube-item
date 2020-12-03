@@ -6,7 +6,7 @@ class Item < ApplicationRecord
 
   mount_uploader :image, ItemImageUploader
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :item_number, presence: true, uniqueness: true
   validates :price, presence: true
   validates :image, presence: true
