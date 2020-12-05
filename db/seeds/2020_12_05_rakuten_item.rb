@@ -314,6 +314,8 @@ ids.each do |id|
 
       if id[3].present?
         price = id[3]
+      else
+        price = ""
       end
 
       if id[5].present?

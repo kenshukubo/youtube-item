@@ -8,7 +8,7 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :item_number, presence: true, uniqueness: true
-  validates :price, presence: true
+  # validates :price, presence: true
   validates :image, presence: true
   validates :asin, uniqueness: true, allow_nil: true
   validates :amazon_url, presence: true, if: -> { rakuten_url.blank? }
