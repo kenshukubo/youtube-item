@@ -202,10 +202,14 @@ export default {
       }
     }
     .drop-menu{
-      padding-left: 20px;
+      padding-left: 24px;
       .third-category{
         display: block;
         padding: 12px 0;
+        border-bottom: 1px solid #e7e7e7;
+        .category-name{
+          padding-left: 12px;
+        }
       }
     }
     .post-category{

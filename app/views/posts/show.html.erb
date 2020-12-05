@@ -17,7 +17,7 @@
           <li class="item-content">
             <div class="item-info">
               <%=image_tag item.image.thumb_mini.url, class:"item-img" %>
-              <div>
+              <div style="width: 100%;">
                 <p class="item-name"><%= item.name %></p>
                   <% if item.category.present? %>
                     <%=link_to item.category.name, category_path(item.category.id), class:"item-category" %>

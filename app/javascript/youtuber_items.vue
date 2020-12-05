@@ -32,7 +32,7 @@
         <li v-for="(item, index) in post.items" :key="index" class="item-content">
           <div class="item-info">
             <img :src="item.image.thumb_mini.url" class="item-img">
-            <div>
+            <div style="width: 100%;">
               <p class="item-name">{{item.name}}</p>
               <p class="item-price">{{item.price}}円<span class="tax-include">(税込)</span></p>
               <ul class="item-btn-wrapper">
@@ -183,6 +183,7 @@ export default {
       height: 200px;
     }
     .item-info{
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -197,6 +198,7 @@ export default {
           width: 120px;
           height: 120px;
           margin-right: 10px;
+          margin-bottom: 0px;
         }
       }
       .item-name{
