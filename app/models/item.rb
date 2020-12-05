@@ -8,11 +8,11 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :item_number, presence: true, uniqueness: true
-  # validates :price, presence: true
+  validates :price, presence: true
   validates :image, presence: true
   validates :asin, uniqueness: true, allow_nil: true
-  validates :amazon_url, presence: true, if: -> { rakuten_url.blank? }
-  validates :rakuten_url, presence: true, if: -> { amazon_url.blank? }
+  validates :amazon_url, presence: true, unless: :rakuten_url?
+  validates :rakuten_url, presence: true, unless: :amazon_url?
 
   def self.search(search)
     return Item.all unless search

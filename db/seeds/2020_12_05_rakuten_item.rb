@@ -314,8 +314,6 @@ ids.each do |id|
 
       if id[3].present?
         price = id[3]
-      else
-        price = ""
       end
 
       if id[5].present?
@@ -324,7 +322,10 @@ ids.each do |id|
         asin = nil
       end
 
+      ##### 本番用 #####
       if Item.find_by(item_number: id[1]).blank? && File.exist?("#{Rails.root}/db/2020amazon_item/#{id[1]}.png")
+      ##### テスト用 #####
+      #if Item.find_by(item_number: id[1]).blank? && File.exist?("#{Rails.root}/db/images/rakuten_api_item/#{id[1]}.png")
         Item.create!(
           name: name,
           item_number: id[1],
