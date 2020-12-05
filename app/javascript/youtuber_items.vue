@@ -208,8 +208,8 @@ export default {
         -webkit-line-clamp: 2;
         overflow: hidden;
         @media(max-width: 567px){
-          height: 42px;
-          font-size: 16px;
+          max-height: 42px;
+          font-size: 12px;
           display: block;
           overflow: scroll;
         }

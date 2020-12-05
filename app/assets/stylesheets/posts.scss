@@ -134,7 +134,7 @@
     box-sizing: border-box;
     @media(max-width: 567px){
       padding: 15px;
-      height: 200px;
+      height: 240px;
     }
     .item-info{
       display: flex;
@@ -156,51 +156,48 @@
       }
       .item-name{
         width: 100%;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
         font-size: 18px;
+        font-weight: 500;
         line-height: 1.2;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
         @media(max-width: 567px){
-          height: 42px;
-          font-size: 16px;
+          max-height: 42px;
+          font-size: 12px;
           display: block;
           overflow: scroll;
         }
       }
-      .item-price-category-wrapper{
+      .item-price{
+        color: #fd381e;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: -.03em;
+        line-height: 24px;
+        margin-right: 10px;
+        @media(max-width: 567px){
+          font-size: 12px;
+        }
+      }
+      .tax-include{
+        font-size: 12px !important;
+      }
+      .item-category{
         display: flex;
         align-items: center;
-        margin-bottom: 12px;
-        .item-price{
-          color: #fd381e;
-          font-size: 16px;
-          font-weight: bold;
-          letter-spacing: -.03em;
-          line-height: 24px;
-          margin-right: 10px;
-          @media(max-width: 567px){
-            font-size: 12px;
-          }
-        }
-        .tax-include{
-          font-size: 12px !important;
-        }
-        .item-category{
-          display: flex;
-          align-items: center;
-          width: fit-content;
-          font-size: 8px;
-          color: #222;
-          background-color: #F5F5F5;
-          border-radius: 16px;
-          padding: 4px 12px;
-          box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.16);
-          &:hover{
-            text-decoration: underline;
-          }
+        width: fit-content;
+        font-size: 8px;
+        color: #222;
+        background-color: #F5F5F5;
+        border-radius: 16px;
+        padding: 4px 12px;
+        margin-bottom: 4px;
+        box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.16);
+        &:hover{
+          text-decoration: underline;
         }
       }
       .item-btn-wrapper{
