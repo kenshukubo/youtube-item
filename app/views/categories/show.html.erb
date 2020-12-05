@@ -46,7 +46,7 @@
           <ul class="post-wrapper-for-pc">
             <% @posts.each do |post| %>
               <li>
-                <%= link_to youtuber_path(post.youtuber_id), class:"post-info" do %>
+                <%= link_to post_path(post.id), class:"post-info" do %>
                   <%= image_tag post.thumbnail.url, class:"post-img"%>
                   <h3 class="post-title"><%=post.title%></h3>
                   <div class="youtuber-info">
@@ -67,7 +67,7 @@
                 <div>
                   
                   <% if item.posts.present? %>
-                    <%=link_to youtuber_path(item.posts.first.id), class:"youtuber-info" do %>
+                    <%=link_to post_path(item.posts.first.id), class:"youtuber-info" do %>
                       <%=image_tag item.posts.first.youtuber.image.url, class:"channel-icon" %>
                       <p class="channel-name"><%= item.posts.first.youtuber.name %></p>
                     <% end %>
@@ -92,7 +92,7 @@
           <ul class="post-wrapper-for-sp">
             <% @posts.each do |post| %>
               <li>
-                <%= link_to youtuber_path(post.youtuber_id), class:"post-info" do %>
+                <%= link_to post_path(post.id), class:"post-info" do %>
                   <%= image_tag post.thumbnail.url, class:"post-img"%>
                   <h3 class="post-title"><%=post.title%></h3>
                   <div class="youtuber-info">
