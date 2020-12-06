@@ -60,11 +60,17 @@
 }
 
 #post-show{
+  .container{
+    display: flex;
+  }
   .column-main{
     @media(max-width: 767px){
       width: 100%;
     }
-  } 
+  }
+  .column-side img{
+    width: 100%;
+  }
   .post-info{
     display: flex;
     margin-bottom: 40px;
@@ -79,7 +85,7 @@
     }
   }
   .post-title{
-    font-size: 32px;
+    font-size: 24px;
     margin-bottom: 8px;
     -webkit-box-orient: vertical;
     display: -webkit-box;
@@ -117,10 +123,17 @@
     }
   }
 
-  .post-swiper{
+  .post-swiper-sp{
     display: none;
     @media(max-width: 767px){
       display: block;
+    }
+  }
+
+  .post-swiper-pc{
+    display: block;
+    @media(max-width: 767px){
+      display: none;
     }
   }
 

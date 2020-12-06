@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_one :category, through: :post_item_category
   has_many :item_posts, dependent: :destroy
   has_many :items, through: :item_posts
+  has_many :instagram_images, dependent: :destroy
 
   mount_uploader :thumbnail, ThumbnailUploader
 

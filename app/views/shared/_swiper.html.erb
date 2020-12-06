@@ -2,12 +2,10 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide"><%=image_tag ("01.jpg")%></div>
-        <div class="swiper-slide"><%=image_tag ("02.jpg")%></div>
-        <div class="swiper-slide"><%=image_tag ("03.jpg")%></div>
-        <div class="swiper-slide"><%=image_tag ("04.jpg")%></div>
-        <div class="swiper-slide"><%=image_tag ("05.jpg")%></div>
-        ...
+        <% post.instagram_images.each do |image| %>
+          <div class="swiper-slide"><%=image_tag image.image.url %></div>
+        <% end %>
+          ...
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -32,8 +30,8 @@ var mySwiper = new Swiper('.swiper-container', {
       slidesPerView: 1,
       spaceBetween: 5
     },
-    // 画面幅が 980px 以上の場合（window width >= 980px）
-    980: {
+    // 画面幅が 767px 以上の場合（window width >= 767px）
+    767: {
       slidesPerView: 3,
       spaceBetween: 10
     }

@@ -1,0 +1,8 @@
+InstagramImage.create!(post: Post.find_by(video_id: "uLSE9dJcBVI"), image: open("#{Rails.root}/db/images/instagram_images/01.jpg"))
+InstagramImage.create!(post: Post.find_by(video_id: "uLSE9dJcBVI"), image: open("#{Rails.root}/db/images/instagram_images/02.jpg"))
+InstagramImage.create!(post: Post.find_by(video_id: "uLSE9dJcBVI"), image: open("#{Rails.root}/db/images/instagram_images/03.jpg"))
+InstagramImage.create!(post: Post.find_by(video_id: "uLSE9dJcBVI"), image: open("#{Rails.root}/db/images/instagram_images/04.jpg"))
+InstagramImage.create!(post: Post.find_by(video_id: "uLSE9dJcBVI"), image: open("#{Rails.root}/db/images/instagram_images/05.jpg"))
+InstagramImage.create!(post: Post.find_by(video_id: "uLSE9dJcBVI"), image: open("#{Rails.root}/db/images/instagram_images/06.jpg"))
+InstagramImage.create!(post: Post.find_by(video_id: "uLSE9dJcBVI"), image: open("#{Rails.root}/db/images/instagram_images/07.jpg"))
+InstagramImage.create!(post: Post.find_by(video_id: "uLSE9dJcBVI"), image: open("#{Rails.root}/db/images/instagram_images/08.jpg"))
