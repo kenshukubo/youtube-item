@@ -1,5 +1,6 @@
 json.posts do
   json.array!(@posts) do |post|
+    json.id            post.id
     json.title         post.title
     json.thumbnail_url post.thumbnail.thumb_mini.url
     json.items         post.items

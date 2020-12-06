@@ -11,7 +11,7 @@
       <div class="post-info">
         <img :src="post.thumbnail_url" class="post-img">
         <div class="post-detail">
-          <h3 class="post-title">{{post.title}}</h3>
+          <a :href="`/posts/${post.id}`" class="post-title">{{post.title}}</a>
           <a :href="`https://www.youtube.com/watch?v=${post.video_id}`" target="_blank" class="channel-link">Youtubeリンク</a>
         </div>
       </div>
@@ -123,12 +123,16 @@ export default {
       padding-left: 15px;
       .post-title{
         font-size: 20px;
+        font-weight: 800;
         -webkit-box-orient: vertical;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         overflow: hidden;
         @media(max-width: 567px){
           font-size: 16px;
+        }
+        &:hover{
+          text-decoration: underline;
         }
       }
       .channel-link{
