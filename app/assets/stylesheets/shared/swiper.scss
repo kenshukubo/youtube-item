@@ -1,0 +1,20 @@
+.swiper-container {
+  width: 100%;
+  margin-bottom: 40px !important;
+}
+
+.swiper-slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img{
+  width: 200px;
+  height: 200px;
+}
+
+.swiper-button-next{
+  width: 20px;
+  height: 36px;
+}

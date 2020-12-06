@@ -116,6 +116,14 @@
       }
     }
   }
+
+  .post-swiper{
+    display: none;
+    @media(max-width: 767px){
+      display: block;
+    }
+  }
+
   .item-content-wrapper{
     display: grid;
     grid-template-columns: repeat(2, auto);
