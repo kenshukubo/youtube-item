@@ -64,6 +64,7 @@
     display: flex;
   }
   .column-main{
+    padding: 0px;
     @media(max-width: 767px){
       width: 100%;
     }
