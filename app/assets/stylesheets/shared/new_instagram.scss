@@ -19,6 +19,7 @@
   .new-instagram-wrapper{
     display: flex;
     align-items: center;
+    min-height: 100px;
   }
   .new-instagram-img{
     width: 80px;
@@ -30,6 +31,9 @@
     align-items: center;
     font-size: 12px;
     margin-bottom: 4px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    width: 250px;
   }
   .youtuber-icon{
     width: 16px;

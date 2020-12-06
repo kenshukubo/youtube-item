@@ -4,7 +4,6 @@ json.posts do
     json.title         post.title
     json.thumbnail_url post.thumbnail.thumb_mini.url
     json.items         post.items
-    json.items_num     post.item_posts.count
     json.video_id      post.video_id
   end
 end

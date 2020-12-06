@@ -14,7 +14,7 @@
         <p class="post-title">紹介コスメ：</p>
         <div class="category-wrapper">
           <% @instagram_categories.each do |category| %>
-            <p class="category-name"><%= category.name %></p>
+            <%=link_to category.name, category_path(category.id), class:"category-name" %>
           <% end %>
         </div>
       </div>

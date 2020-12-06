@@ -3,7 +3,7 @@
     <div class="youtuber-info">
       <img :src="youtuber.image" class="channel-img">
       <div>
-        <h2><span class="youtuber-name">{{youtuber.name}}</span> <br class="new-line">のおすすめアイテム</h2>
+        <h2 class="youtuber-name-wrapper"><span class="youtuber-name">{{youtuber.name}}</span> <br class="new-line">のおすすめアイテム</h2>
         <a :href="`https://www.youtube.com/channel/${youtuber.channelId}`" target="_blank" class="channel-link">Youtubeチャンネルへ</a>
       </div>
     </div>
@@ -17,10 +17,9 @@
       </div>
       <div v-if="!show[index]" @click="openMenu(index)" class="item-list-btn">
         <div>
-          <span>アイテム一覧を表示</span>
+          <span>アイテム一覧</span>
           <img :src="arrowImage" class="arrow-img">
         </div>
-        <span class="item-num">(商品数：{{post.items_num}})</span>
       </div>
       <div v-if="show[index]" @click="openMenu(index)" class="item-list-btn">
         <div>
@@ -91,9 +90,17 @@ export default {
     border-radius: 100%;
     object-fit: cover;
     margin-right: 15px;
+    @media(max-width: 767px){
+      width: 80px;
+    }
+  }
+  .youtuber-name-wrapper{
+    font-size: 16px;
+    font-weight: 400;
   }
   .youtuber-name{
     font-size: 24px;
+    font-weight: 800;
   }
   .new-line{
     display: none;
@@ -159,9 +166,6 @@ export default {
     margin-bottom: 15px;
     &:hover{
       opacity: .8;
-    }
-    .item-num{
-      font-size: 10px;
     }
     .arrow-img{
       width: 14px;

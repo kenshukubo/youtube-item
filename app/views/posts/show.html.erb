@@ -43,8 +43,7 @@
         <% end %>
       </ul>
       <div class="link-to-youtuber-wrapper">
-        <span style="margin-right:10px;">▶︎</span>
-        <p><%=link_to @post.youtuber.name, youtuber_path(@post.youtuber.id), class:"link-to-youtuber" %><br>のアイテム一覧を見る</p>
+        <p>▶︎ <%=link_to @post.youtuber.name, youtuber_path(@post.youtuber.id), class:"link-to-youtuber" %><br>のアイテム一覧を見る</p>
       </div>
     </div>
     <% if @post.instagram_images.present? %>
