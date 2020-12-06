@@ -1,0 +1,22 @@
+<div id="new-instagram">
+  <h2 class="new-instagram-title">
+    <%=image_tag "instagram.png", class:"instagram-icon" %>
+    今日のインスタ投稿
+  </h2>
+  <div class="new-instagram-wrapper">
+    <%=image_tag @instagram_post.image.url, class:"new-instagram-img" %>
+    <div class="new-instagram-info">
+      <div class="youtuber-info">
+        <%=image_tag @instagram_post.post.youtuber.image.url, class:"youtuber-icon" %>
+        <%= @instagram_post.post.youtuber.name %>
+      </div>
+      <div>
+        <p class="post-title">紹介コスメ：</p>
+        <% @instagram_categories.each do |category| %>
+          <span class="category-name"><%= category.name %></span>
+        <% end %>
+      </div>
+      <%=link_to "▶︎Tubestで詳細をみる", post_path(@instagram_post.post.id), class:"post-link" %>
+    </div>
+  </div>
+</div>

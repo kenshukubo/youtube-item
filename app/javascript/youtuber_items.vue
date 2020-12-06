@@ -93,7 +93,7 @@ export default {
     margin-right: 15px;
   }
   .youtuber-name{
-    font-size: 32px;
+    font-size: 24px;
   }
   .new-line{
     display: none;

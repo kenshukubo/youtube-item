@@ -18,6 +18,11 @@
     </div>
 
     <div class="display-for-sp">
+      <% if @instagram_post.present? %>
+        <div class="content">
+          <%= render "shared/new_instagram" %>
+        </div>
+      <% end %>
       <div class="content">
         <%= render "shared/top_youtuber_list" %>
       </div>
