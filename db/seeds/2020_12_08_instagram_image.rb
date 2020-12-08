@@ -14,7 +14,7 @@ Item.create!(
   name: "Ere Perez - Natural & Vegan Mango Lip Honey",
   item_number: 35,
   image: open("#{Rails.root}/db/2020amazon_item/35.png"), ##### 本番用 #####
-  price: price,
+  price: 2400,
   amazon_url: "https://www.amazon.com/Ere-Perez-Natural-Vegan-Beauty/dp/B07YSW4CWQ",
   asin: "B07YSW4CWQ",
   rakuten_url: nil
